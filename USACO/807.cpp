@@ -2,20 +2,27 @@
 #include <cmath>
 using namespace std;
 
-#define endl '\n'
-#define int long long
-#define inp freopen("teleport.in", "r", stdin)
-#define out freopen("teleport.out", "w", stdout)
-#define TIME 1.0*clock()/CLOCKS_PER_SEC
-#define fastIO ios_base::sync_with_stdio(0); cin.tie(0)
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
 
-const int MAXN = 1e6 + 5;
-const int MOD = 1e9 + 7;
+    freopen("teleport.in", "r", stdin);
+    freopen("teleport.out", "w", stdout);
 
-signed main() {
-    fastIO; inp; out;
     int a, b, x, y;
     cin >> a >> b >> x >> y;
-    cout << min(abs(a - b), min(abs(a - x) + abs(b - y), abs(a - y) + abs(b - x)));
+
+    int A = min(a, b);
+    int B = max(a, b);
+    int X = min(x, y);
+    int Y = max(x, y);
+
+    int k = abs(A - X) + abs(B - Y);
+
+    if (k < B - A)
+        cout << k;
+    else 
+        cout << B - A;
+
     return 0;
 }
