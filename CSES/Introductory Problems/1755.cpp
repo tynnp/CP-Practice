@@ -1,44 +1,41 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
 using namespace std;
 
-#define endl '\n'
-#define int long long
-#define inp freopen("file.inp", "r", stdin)
-#define out freopen("file.out", "w", stdout)
-#define TIME 1.0*clock()/CLOCKS_PER_SEC
-#define fastIO ios_base::sync_with_stdio(0); cin.tie(0)
-
-const int MAXN = 1e6 + 5;
-const int MOD = 1e9 + 7;
-
-int odd;
+char odd;
 string s, ans;
-map<char, int> m;
-pair<char, int> p;
+int a[1001];
 
-void solve() {
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+
     cin >> s;
-    for (char c : s) m[c]++;
+    for (char &c : s)
+        a[c]++; 
 
-    for (auto x : m) {
-        if (x.second % 2) {
-            odd++;
-            p = x;
-        } else 
-            ans.insert(ans.size()/2, x.second, x.first);
-            
-        if (odd > 1) {
-            cout << "NO SOLUTION";
-            return;
+    int cntOdd = 0;
+    for (char c = 'A'; c <= 'Z'; c++) {
+        if (a[c] & 1) {
+            cntOdd++;
+            odd = c;
+            continue;
         }
-    }
-    
-    if (odd) ans.insert(ans.size()/2, p.second, p.first);
-    cout << ans;
-}
+        
+        if (a[c])
+            ans.insert(ans.size() / 2, a[c], c);
 
-signed main() {
-    fastIO;
-    solve();
+        if (cntOdd > 1) 
+            break;
+    }
+
+    if (cntOdd)
+        ans.insert(ans.size() / 2, a[odd], odd);
+
+    if (cntOdd > 1) 
+        cout << "NO SOLUTION";
+    else 
+        cout << ans;
+    
     return 0;
 }
