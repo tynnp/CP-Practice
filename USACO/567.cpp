@@ -1,32 +1,28 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
-#define endl '\n'
-#define int long long
-#define inp freopen("paint.in", "r", stdin)
-#define out freopen("paint.out", "w", stdout)
-#define TIME 1.0*clock()/CLOCKS_PER_SEC
-#define fastIO ios_base::sync_with_stdio(0); cin.tie(0)
+int main() {
+    freopen("paint.in", "r", stdin);
+    freopen("paint.out", "w", stdout);
 
-const int MAXN = 1e6 + 5;
-const int MOD = 1e9 + 7;
-
-int a, b, c, d, ans;
-bool check[MAXN];
-
-signed main() {
-    fastIO; inp; out;
+    bool paint[105];
+    int a, b, c, d;
     cin >> a >> b >> c >> d;
 
+    for (int i = 0; i < 105; i++)
+        paint[i] = false;
+
     for (int i = a; i < b; i++)
-        check[i] = true;
+        paint[i] = true;
 
     for (int i = c; i < d; i++)
-        check[i] = true;
+        paint[i] = true;
 
-    for (int i = 0; i < MAXN; i++)
-        ans += check[i];
-    
+    int ans = 0;
+    for (int i = 0; i < 105; i++)
+        ans += paint[i];
+
     cout << ans;
     return 0;
 }
