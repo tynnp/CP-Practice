@@ -1,33 +1,16 @@
-#include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
-
+#include <iostream>
 using namespace std;
-using namespace __gnu_pbds;
 
-#define endl '\n'
-#define int long long
-#define inp freopen("file.inp", "r", stdin)
-#define out freopen("file.out", "w", stdout)
-#define TIME 1.0*clock()/CLOCKS_PER_SEC
-#define fastIO ios_base::sync_with_stdio(0); cin.tie(0)
-template<typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-template<typename K, typename V> using ordered_map = tree<K, V, less<K>, rb_tree_tag, tree_order_statistics_node_update>;
+int main() {
+    int t, ans = 0;
+    cin >> t;
 
-const int MAXN = 1e6 + 5;
-const int MOD = 1e9 + 7;
-
-signed main() {
-    fastIO;
-    int n, ans;
-
-    cin >> n;
-    while (n--) {
-        int a, b, c;
-        cin >> a >> b >> c;
-        ans += (a + b + c >= 2);
+    while (t--) {
+        int x, y, z;
+        cin >> x >> y >> z;
+        ans += (x + y + z >= 2);
     }
-    
+
     cout << ans;
     return 0;
 }
