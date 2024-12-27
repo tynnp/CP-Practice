@@ -1,51 +1,39 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-#define endl '\n'
-#define int long long
-#define inp freopen("buckets.in", "r", stdin)
-#define out freopen("buckets.out", "w", stdout)
-#define TIME 1.0*clock()/CLOCKS_PER_SEC
-#define fastIO ios_base::sync_with_stdio(0); cin.tie(0)
+int main() {
+    freopen("buckets.in", "r", stdin);
+    freopen("buckets.out", "w", stdout);
 
-const int MAXN = 1e6 + 5;
-const int MOD = 1e9 + 7;
+    char c[10][10];
+    int xB, yB, xR, yR, xL, yL;
 
-signed main() {
-    fastIO; inp; out;
-    const int n = 10;
-    char c[n][n];
+    for (int i = 0; i < 10; i++)
+        for (int j = 0; j < 10; j++)
+            cin >> c[i][j];
 
-    for (int i = 0; i < n; i++) {
-        string row;
-        cin >> row;
-        for (int j = 0; j < n; j++) 
-            c[i][j] = row[j];
-    }
-
-    int barnX, barnY, lakeX, lakeY, rockX, rockY;
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
             if (c[i][j] == 'B') 
-                barnX = i, barnY = j;
+                xB = i, yB = j;
 
             if (c[i][j] == 'L')
-                lakeX = i, lakeY = j;
+                xL = i, yL = j;
 
             if (c[i][j] == 'R')
-                rockX = i, rockY = j;
+                xR = i, yR = j;
         }
     }
 
-    int ans = abs(lakeX - barnX) + abs(barnY - lakeY) - 1;
+    int ans = abs(xL - xB) + abs(yL - yB) - 1;
 
-    if (barnY == lakeY && rockY == barnY && ((lakeX < rockX && rockX < barnX) || (barnX < rockX && rockX < lakeX)))
-        ans += 2;
-
-    if (barnX == lakeX && rockX == barnX && ((lakeY < rockY && rockY < barnY) || (barnY < rockY && rockY < lakeY)))
+    if ((xB == xL && xB == xR) && ((yB < yR && yR < yL) || (yB > yR && yR > yL)))
         ans += 2;
     
+    if ((yB == yL && yB == yR) && ((xB < xR && xR < xL) || (xB > xR && xR > xL)))
+        ans += 2;
+
     cout << ans;
     return 0;
 }
