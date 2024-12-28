@@ -1,21 +1,88 @@
 #include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
-
-using namespace std;
-using namespace __gnu_pbds;
-
-#define endl '\n'
 #define int long long
-#define inp freopen("file.inp", "r", stdin)
-#define out freopen("file.out", "w", stdout)
-#define TIME 1.0*clock()/CLOCKS_PER_SEC
-#define fastIO ios_base::sync_with_stdio(0); cin.tie(0)
-template<typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-template<typename K, typename V> using ordered_map = tree<K, V, less<K>, rb_tree_tag, tree_order_statistics_node_update>;
+#define fastIO ios_base::sync_with_stdio(false), cin.tie(nullptr)
+using namespace std;
 
 const int MAXN = 2e5 + 5;
 const int MOD = 1e9 + 7;
+const int BUF_SZ = 1 << 15;
+
+inline namespace Input {
+    char buf[BUF_SZ];
+    int pos;
+    int len;
+    
+    char next_char() {
+    	if (pos == len) {
+    		pos = 0;
+    		len = (int)fread(buf, 1, BUF_SZ, stdin);
+    		
+    		if (!len) 
+    		    return EOF; 
+    	}
+    	
+    	return buf[pos++];
+    }
+
+    int read_int() {
+    	int x;
+    	char ch;
+    	int sgn = 1;
+    	
+    	while (!isdigit(ch = next_char())) 
+    		if (ch == '-') 
+    		    sgn *= -1; 
+    	
+    	x = ch - '0';
+    	
+    	while (isdigit(ch = next_char())) 
+    	    x = x * 10 + (ch - '0'); 
+    	    
+    	return x * sgn;
+    }
+}  
+
+inline namespace Output {
+    char buf[BUF_SZ];
+    int pos;
+
+    void flush_out() {
+    	fwrite(buf, 1, pos, stdout);
+    	pos = 0;
+    }
+
+    void write_char(char c) {
+    	if (pos == BUF_SZ) 
+    	    flush_out(); 
+    	buf[pos++] = c;
+    }
+
+    void write_int(int x) {
+    	static char num_buf[100];
+    	
+    	if (x < 0) {
+    		write_char('-');
+    		x *= -1;
+    	}
+    	
+    	int len = 0;
+    	
+    	for (; x >= 10; x /= 10) 
+    	    num_buf[len++] = (char)('0' + (x % 10)); 
+    	
+    	write_char((char)('0' + x));
+    	
+    	while (len) 
+    	    write_char(num_buf[--len]); 
+    	    
+    	write_char(' ');
+    }
+
+    void init_output() { 
+        assert(atexit(flush_out) == 0); 
+        
+    }
+}  
 
 int n, a[MAXN], s[MAXN];
 
@@ -40,10 +107,12 @@ bool binary_search(int &x) {
 
 signed main() {
     fastIO;
-    cin >> n;
+    init_output();
+    
+    n = read_int();
 
     for (int i = 0; i < 2*n; i++) {
-        cin >> a[i];
+        a[i] = read_int();
         s[i] = a[i];
     }
 
@@ -51,7 +120,7 @@ signed main() {
 
     for (int i = 0; i < 2*n; i++) 
         if (binary_search(a[i]))
-            cout << a[i] << ' ';
+            write_int(a[i]);
     
     return 0;
 }
