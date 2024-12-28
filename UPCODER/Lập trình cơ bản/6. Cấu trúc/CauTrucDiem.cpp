@@ -1,68 +1,65 @@
 #include <iostream>
+#include <algorithm>
 #include <cmath>
 #include <iomanip>
-#define endl '\n'
 using namespace std;
 
 struct Diem {
-    int x, y; 
-
-    void nhap() {
-        cin >> x >> y;
-    }
-
-    void xuat() {
-        cout << "(" << x << "," << y << ")";
-        return;
-    }
-
-    double tinhDoDai(Diem other) {
-        return (double) sqrt(pow(other.x - x, 2) + pow(other.y - y, 2));
-    }
+    int x, y;  
+    void nhap();
+    void xuat();
 };
 
+double tinhDoDai(Diem a, Diem b) {
+    return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
+}
+
 double chuVi(Diem a, Diem b, Diem c) {
-    double AB = a.tinhDoDai(b);
-    double BC = b.tinhDoDai(c);
-    double CA = c.tinhDoDai(a);
+    double AB = tinhDoDai(a, b);
+    double BC = tinhDoDai(b, c);
+    double CA = tinhDoDai(c, a);
     return AB + BC + CA;
 }
 
 double dienTich(Diem a, Diem b, Diem c) {
-    double AB = a.tinhDoDai(b);
-    double BC = b.tinhDoDai(c);
-    double CA = c.tinhDoDai(a);
-    double p = (AB + BC + CA)/2;
+    double AB = tinhDoDai(a, b);
+    double BC = tinhDoDai(b, c);
+    double CA = tinhDoDai(c, a);
+    double p = chuVi(a, b, c)/2;
     return sqrt(p * (p-AB) * (p-BC) * (p-CA));
 }
 
-bool thangHang(Diem a, Diem b, Diem c) {
-    return dienTich(a, b, c) <= 0.00001;
-}
-
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-
     Diem a, b, c;
     a.nhap();
     b.nhap();
     c.nhap();
-
-    a.xuat(); cout << " ";
-    b.xuat(); cout << " ";
-    c.xuat(); cout << endl;
-
+    
+    a.xuat();
+    b.xuat();
+    c.xuat();
+    cout << endl;
+    
     cout << fixed << setprecision(3);
-    cout << a.tinhDoDai(b) << endl;
-    cout << c.tinhDoDai(a) << endl;
-    cout << b.tinhDoDai(c) << endl;
-
-    if (thangHang(a, b, c)) cout << -1;
-    else {
-        cout << dienTich(a, b, c) << " ";
-        cout << chuVi(a, b, c);
-    }
-
+    cout << tinhDoDai(a, b) << endl;
+    cout << tinhDoDai(a, c) << endl;
+    cout << tinhDoDai(b, c) << endl;
+    
+    double cv = chuVi(a, b, c);
+    double dt = dienTich(a, b, c);
+    
+    if (dt <= 0.0001) 
+        cout << -1;
+    else 
+        cout << dt << ' ' << cv;
+    
     return 0;
+}
+
+void Diem::nhap() {
+    cin >> x >> y;
+}
+
+void Diem::xuat() {
+    cout << '(' << x << ',' << y << ')' << ' ';
 }
