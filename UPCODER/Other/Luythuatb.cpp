@@ -1,38 +1,43 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
-const ll MOD = 1e9 + 7;
+#define int long long
+const int MOD = 1e9 + 7;
 
-ll binaryMul(ll a, ll b, ll MOD) {
-    ll res = 0;
-    a = a % MOD;
+int binary_mul(int a, int b, int MOD) {
+    int res = 0;
+    a %= MOD;
     
     while (b) {
-        if (b & 1) res = (res + a) % MOD;
+        if (b & 1)
+            res = (res + a) % MOD;
         a = (a << 1) % MOD;
-        b /= 2;
+        b >>= 1;
     }
     
     return res;
 }
 
-ll binaryPow(ll a, ll b, ll MOD) {
-    ll res = 1;
-    a = a % MOD;
+int binary_pow(int a, int b, int MOD) {
+    int res = 1;
+    a %= MOD;
     
     while (b) {
-        if (b & 1) res = binaryMul(res, a, MOD);
-        a = binaryMul(a, a, MOD);
-        b /= 2;
+        if (b & 1)
+            res = binary_mul(res, a, MOD);
+        a = binary_mul(a, a, MOD);
+        b >>= 1;
     }
     
     return res;
 }
 
-int main() {
-    ll a, b;
-    cin >> a >> b;
-    cout << binaryPow(a, b, MOD);
+int32_t main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
+    int n, k;
+    cin >> n >> k;
+    cout << binary_pow(n, k, MOD);
     return 0;
 }
