@@ -1,73 +1,75 @@
 #include <iostream>
 #include <algorithm>
-#define endl '\n'
 using namespace std;
 
 struct PhanSo {
     int tu, mau;
-
-    PhanSo tong(PhanSo other) {
-        PhanSo res;
-        res.tu = tu*other.mau + mau*other.tu;
-        res.mau = mau * other.mau;
-        return res;
-    }
-
-    PhanSo hieu(PhanSo other) {
-        PhanSo res;
-        res.tu = tu*other.mau - mau*other.tu;
-        res.mau = mau * other.mau;
-        return res;
-    }
-
-    PhanSo tich(PhanSo other) {
-        PhanSo res;
-        res.tu = tu * other.tu;
-        res.mau = mau * other.mau;
-        return res;
-    }
-
-    PhanSo thuong(PhanSo other) {
-        PhanSo res;
-        res.tu = tu * other.mau;
-        res.mau = mau * other.tu;
-        return res;
-    }
 };
 
-void xuat(PhanSo res) {
-    int ucln = __gcd(res.tu, res.mau);
-    res.tu /= ucln;
-    res.mau /= ucln;
+void rutGon(PhanSo &p) {
+    int ucln = __gcd(p.tu, p.mau);
+    p.tu /= ucln;
+    p.mau /= ucln;
+    
+    if (p.mau < 0) 
+        p.tu = -p.tu, p.mau = -p.mau;
+}
 
-    if (res.mau < 0) 
-        res.tu = -res.tu, res.mau = -res.mau;
+PhanSo tinhTong(PhanSo a, PhanSo b) {
+    PhanSo kq;
+    kq.tu = a.tu * b.mau + a.mau * b.tu;
+    kq.mau = a.mau * b.mau;
+    rutGon(kq);
+    return kq;
+}
 
-    cout << res.tu;
-    if (res.tu != 0) cout << "/" << res.mau;
+PhanSo tinhHieu(PhanSo a, PhanSo b) {
+    PhanSo kq;
+    kq.tu = a.tu * b.mau - a.mau * b.tu;
+    kq.mau = a.mau * b.mau;
+    rutGon(kq);
+    return kq;
+}
+
+PhanSo tinhTich(PhanSo a, PhanSo b) {
+    PhanSo kq;
+    kq.tu = a.tu * b.tu;
+    kq.mau = a.mau * b.mau;
+    rutGon(kq);
+    return kq;
+}
+
+PhanSo tinhThuong(PhanSo a, PhanSo b) {
+    PhanSo kq;
+    kq.tu = a.tu * b.mau;
+    kq.mau = a.mau * b.tu;
+    rutGon(kq);
+    return kq;
+}
+
+void xuatPhanSo(PhanSo p) {
+    cout << p.tu;
+    if (p.tu != 0) 
+        cout << "/" << p.mau;
     cout << endl;
-    return;
+
 }
 
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-
-    PhanSo arr[2];
-    bool check = false;
-
-    for (int i = 0; i < 2; i++) {
-        cin >> arr[i].tu >> arr[i].mau;
-        if (arr[i].mau == 0) check = true;
+    PhanSo a, b;
+    cin >> a.tu >> a.mau;
+    cin >> b.tu >> b.mau;
+    
+    if (a.mau == 0 || b.mau == 0) {
+        cout << -1;
+    } else {
+        xuatPhanSo(tinhTong(a, b));
+        xuatPhanSo(tinhHieu(a, b));
+        xuatPhanSo(tinhTich(a, b));
+        
+        if (b.tu != 0)
+            xuatPhanSo(tinhThuong(a, b));
     }
-
-    if (check) cout << -1;
-    else {
-        xuat(arr[0].tong(arr[1]));
-        xuat(arr[0].hieu(arr[1]));
-        xuat(arr[0].tich(arr[1]));
-        if (arr[1].tu != 0) xuat(arr[0].thuong(arr[1]));
-    }
-
+    
     return 0;
 }
