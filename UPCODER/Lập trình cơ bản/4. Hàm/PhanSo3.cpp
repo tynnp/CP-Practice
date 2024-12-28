@@ -4,42 +4,36 @@ using namespace std;
 
 struct PhanSo {
     int tu, mau;
-
-    void nhap() {
-        cin >> tu >> mau;
-        return;
+    
+    istream& nhap() {
+        return (cin >> tu >> mau);
     }
-
+    
     void xuat() {
-        cout << tu << "/" << mau;
-        return;
+        cout << tu << '/' << mau;
     }
-
+    
     void rutGon() {
         int ucln = __gcd(tu, mau);
         tu /= ucln;
         mau /= ucln;
-        return;
     }
 };
 
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-
-    PhanSo res, arr[100];
-    int a, b, n = 0;
-
-    while (cin >> a >> b) 
-        arr[n].tu = a, arr[n].mau = b,  
+    PhanSo a[100];
+    int n = 0;
+    
+    while (a[n].nhap())
         n++;
-
-    res = arr[0];
-    for (int i = 1; i < n; i++)
-        res.tu = res.tu*arr[i].mau + arr[i].tu*res.mau,
-        res.mau = res.mau*arr[i].mau;
-
-    res.rutGon();
-    res.xuat();
+    
+    PhanSo kq = a[0];
+    for (int i = 1; i < n; i++) {
+        kq.tu = kq.tu * a[i].mau + kq.mau * a[i].tu;
+        kq.mau = kq.mau * a[i].mau;
+    }
+    
+    kq.rutGon();
+    kq.xuat();
     return 0;
 }
