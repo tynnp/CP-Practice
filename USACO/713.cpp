@@ -3,7 +3,6 @@ using namespace std;
 
 int n, x, y;
 vector<pair<int, int>> v;
-set<int> s;
 
 int main() {
     freopen("cowqueue.in", "r", stdin);
@@ -21,23 +20,11 @@ int main() {
     int ans = 0;
     
     for (int i = 0; i < n; i++) {
-        int a = v[i].first;
-        int b = v[i].second;
-        
-        auto it = s.upper_bound(a);
-        
-        if (it != s.end()) {
-            s.insert(*it + b);
-            s.erase(it);
-            ans = *it + b;
-        } else {
-            s.insert(a + b);
-            ans = a + b;
-        }
+        if (ans > v[i].first) 
+            ans += v[i].second;
+        else 
+            ans = v[i].first + v[i].second;
     }
-    
-    // for (auto it : s)
-    //     cout << it << ' ';
     
     cout << ans;
     return 0;
