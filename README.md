@@ -15,7 +15,7 @@
 | 6 | USACO - USA Computing Olympiad | [Truy cập](/USACO/) | [Truy cập web](https://usaco.org/index.php) |
 | 7 | KATTIS - Kattis Problem Archive | [Truy cập](/KATTIS/) | [Truy cập web](https://open.kattis.com/) |
 | 8 | LEETCODE - A New Way to Learn | | [Truy cập web](https://leetcode.com/) |
-| 9 | HACKERRANK - Online coding tests | [Truy cập](/HACKERRANK/) | [Truy cập web](https://www.hackerrank.com/) | 
+| 9 | HACKERRANK - Online Coding Tests and Technical Interviews | [Truy cập](/HACKERRANK/) | [Truy cập web](https://www.hackerrank.com/) | 
 | 10 | CSES - Code Submission Evaluation System | [Truy cập](/CSES/) | [Truy cập web](https://cses.fi/) |
 | 11 | LCOJ - Luyện Code Online| [Truy cập](/ONLINE%20JUDGE/LCOJ/) | [Truy cập web](https://luyencode.net/) |
 | 12 | CDOJ - CodeDream Online Judge| | [Truy cập web](https://oj.codedream.edu.vn/) |
