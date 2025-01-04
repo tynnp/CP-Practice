@@ -1,17 +1,22 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-
+ 
+int t, ans;
+string s;
+ 
 int main() {
-    int n, res = 0;
-    cin >> n;
-
-    while (n--) {
-        string tmp;
-        cin >> tmp;
-        if (tmp[0] == '-' || tmp[2] == '-') res--;
-        else res++;
+    cin.tie(0) -> sync_with_stdio(0);
+    cin >> t;
+    
+    while (t--) {
+        cin >> s;
+        
+        if (s[0] == '+' || s[2] == '+')
+            ans++;
+        else 
+            ans--;
     }
-
-    cout << res;
+    
+    cout << ans;
     return 0;
 }
