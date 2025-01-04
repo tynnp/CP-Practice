@@ -1,18 +1,23 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-
+ 
+int t;
+string s;
+ 
 int main() {
-    int n;
-    cin >> n;
-
-    while (n--) {
-        string tmp;
-        cin >> tmp;
-        if (tmp.length() >= 11) 
-            cout << tmp[0] << tmp.length()-2 << tmp[tmp.length()-1];
-        else cout << tmp;
-        cout << endl;
+    cin.tie(0) -> sync_with_stdio(0);
+    cin >> t;
+    
+    while (t--) {
+        cin >> s;
+        
+        if (s.size() <= 10) {
+            cout << s << '\n';
+            continue;
+        }
+        
+        cout << s[0] << s.size() - 2 << s[s.size()-1] << '\n';
     }
-
+    
     return 0;
 }
