@@ -27,8 +27,7 @@
 | 18 | PDLOJ - Phan Đăng Lưu Online Judge | [Truy cập](/ONLINE%20JUDGE/PDLOJ/) | [Truy cập web](http://phandangluu.online/) |
 | 19 | CSLOJ - Chuyên Sơn La Online Judge | [Truy cập](/ONLINE%20JUDGE/CSLOJ/) | [Truy cập web](http://csloj.ddns.net/)
 | 20 | PTNKOJ - Phổ Thông Năng Khiếu Online Judge | [Truy cập](/ONLINE%20JUDGE/PTNKOJ/) | [Truy cập web](http://ptnkoj.com/) |
-| 21 | GTLTOJ - FITHOU (Đại học Mở Hà Nội) Online Judge | | [Truy cập web](https://olp.hou.edu.vn/) |
+| 21 | GTLTOJ - FITHOU (Đại học Mở Hà Nội) Online Judge | [Truy cập](/ONLINE%20JUDGE/GTLTOJ/) | [Truy cập web](https://olp.hou.edu.vn/) |
 | 22 | SPOJ - Sphere Online Judge | [Truy cập](/ONLINE%20JUDGE/SPOJ/) | [Truy cập web](https://www.spoj.com/) |
 | 23 | TASOJ - TLU AlgoSec Online Judge | [Truy cập](/ONLINE%20JUDGE/TASOJ/) | [Truy cập web](https://oj.tlualgosec.com/) |
 | 24 | VNOJ – VNOI Online Judge | [Truy cập](/ONLINE%20JUDGE/VNOJ/) | [Truy cập web](https://oj.vnoi.info/) |
-- Số lượng file bài giải trong năm 2025: 16.
