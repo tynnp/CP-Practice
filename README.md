@@ -1,5 +1,5 @@
 ## 📑 Thông tin liên quan
-- Số lượng file bài giải: 1861.
+- Số lượng file bài giải: 1862.
 - Số lượng file bài giải trong năm 2025: 16.
 - Chủ sở hữu: Nguyễn Ngọc Phú Tỷ (tynnp).
 - Ngôn ngữ lập trình sử dụng chính: C/C++, Python.
@@ -32,3 +32,4 @@
 | 22 | SPOJ - Sphere Online Judge | [Truy cập](/ONLINE%20JUDGE/SPOJ/) | [Truy cập web](https://www.spoj.com/) |
 | 23 | TASOJ - TLU AlgoSec Online Judge | [Truy cập](/ONLINE%20JUDGE/TASOJ/) | [Truy cập web](https://oj.tlualgosec.com/) |
 | 24 | VNOJ – VNOI Online Judge | [Truy cập](/ONLINE%20JUDGE/VNOJ/) | [Truy cập web](https://oj.vnoi.info/) |
+- Số lượng file bài giải trong năm 2025: 16.
