@@ -31,3 +31,4 @@
 | 22 | SPOJ - Sphere Online Judge | [Truy cập](/ONLINE%20JUDGE/SPOJ/) | [Truy cập web](https://www.spoj.com/) |
 | 23 | TASOJ - TLU AlgoSec Online Judge | [Truy cập](/ONLINE%20JUDGE/TASOJ/) | [Truy cập web](https://oj.tlualgosec.com/) |
 | 24 | VNOJ – VNOI Online Judge | [Truy cập](/ONLINE%20JUDGE/VNOJ/) | [Truy cập web](https://oj.vnoi.info/) |
+| 25 | DMOJ - Modern Online Judge | [Truy cập](/ONLINE%20JUDGE/DMOJ/) | [Truy cập web](https://dmoj.ca/) | 
