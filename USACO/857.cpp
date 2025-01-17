@@ -10,23 +10,12 @@ void Try(int cnt, int milk1, int milk2, vi fir, vi sec) {
         return;
     }
     
-    if (cnt % 2 == 1) {
-        for (int i = 0; i < 10; i++) {
-            int x = fir[i];
-            vi newFir = fir, newSec = sec;
-            newFir.erase(newFir.begin() + i);
-            newSec.push_back(x);
-            Try(cnt + 1, milk1 - x, milk2 + x, newFir, newSec);
-        }
-        
-    } else {
-        for (int i = 0; i < 10; i++) {
-            int x = sec[i];
-            vi newFir = fir, newSec = sec;
-            newSec.erase(newSec.begin() + i);
-            newFir.push_back(x);
-            Try(cnt + 1, milk1 + x, milk2 - x, newFir, newSec);
-        }
+    for (int i = 0; i < 10; i++) {
+        int x = fir[i];
+        vi newFir = fir, newSec = sec;
+        newFir.erase(newFir.begin() + i);
+        newSec.push_back(x);
+        Try(cnt + 1, milk2 + x, milk1 - x, newSec, newFir);
     }
 }
 
