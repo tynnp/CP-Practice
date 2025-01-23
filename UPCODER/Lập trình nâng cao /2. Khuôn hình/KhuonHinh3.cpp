@@ -1,72 +1,74 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 struct PhanSo {
     int tu, mau;
 };
 
-bool operator < (PhanSo p1, PhanSo p2) {
-    return (double) p1.tu/p1.mau < (double) p2.tu/p2.mau;
-}
-
-istream& operator >> (istream &in, PhanSo &p) {
+istream &operator >> (istream &in, PhanSo &p) {
     in >> p.tu >> p.mau;
-    if (p.mau < 0) 
-        p.tu = -p.tu, 
-        p.mau = -p.mau;
     return in;
 }
 
-ostream& operator << (ostream &out, PhanSo p) {
-    int ucln = __gcd(p.tu, p.mau);
-    p.tu /= ucln;
-    p.mau /= ucln;
-    out << p.tu << "/" << p.mau;
+ostream &operator << (ostream &out, PhanSo p) {
+    out << p.tu << '/' << p.mau;
     return out;
 }
 
-template <typename T>
+bool operator < (PhanSo a, PhanSo b) {
+    return a.tu * b.mau < a.mau * b.tu;
+}
+
+template<typename T>
 struct Array {
     int size = 0;
-    T values[100];
-
-    void input() {
-        T n; 
-        cin >> n;
-        values[size++] = n;
-        return;
-    }
-
-    T min() {
-        T min = values[0];
+    T items[100];
+    
+    T timMin() {
+        T res = items[0];
         for (int i = 1; i < size; i++)
-            if (values[i] < min)
-                min = values[i];
-        return min;
+            if (items[i] < res)
+                res = items[i];
+        return res;
     }
 };
 
-int main() {
-    char c; 
-    Array<int> arrInt;
-    Array<double> arrDouble;
-    Array<PhanSo> arrPhanSo;
+template<typename T>
+istream &operator >> (istream &in, Array<T> &arr) {
+    in >> arr.items[arr.size];
+    arr.size++;
+    return in;
+}
 
-    while (cin >> c) {
-        if (c == 'a') arrInt.input();
-        else if (c == 'b') arrDouble.input();
-        else if (c == 'c') arrPhanSo.input();
+template<typename T> 
+ostream &operator << (ostream &out, Array<T> arr) {
+    if (arr.size == 0) {
+        out << "khong co";
+    } else {
+        out << arr.timMin();
     }
+}
 
-    if (arrInt.size > 0) cout << arrInt.min() << endl;
-    else cout << "khong co" << endl;
-
-    if (arrDouble.size > 0) cout << arrDouble.min() << endl;
-    else cout << "khong co" << endl;
-
-    if (arrPhanSo.size > 0) cout << arrPhanSo.min() << endl;
-    else cout << "khong co" << endl;
-
+int main() {
+    char kt;
+    Array<int> a;
+    Array<float> b;
+    Array<PhanSo> c;
+    
+    while (cin >> kt) {
+        if (kt == 'a') cin >> a;
+        if (kt == 'b') cin >> b;
+        if (kt == 'c') cin >> c;
+    }
+    
+    cout << a << endl;
+    cout << b << endl;
+    cout << c << endl;
+    
     return 0;
 }
+
+
+
+
+
