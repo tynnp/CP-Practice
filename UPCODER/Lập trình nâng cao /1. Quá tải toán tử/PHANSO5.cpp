@@ -1,69 +1,55 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 struct PhanSo {
-    int tu;
-    int mau;
-
-    void rutGon() {
-        int ucln = __gcd(this->tu, this->mau);
-        this->tu /= ucln;
-        this->mau /= ucln;
-
-        if (this->mau < 0) 
-            this->tu = -this->tu,
-            this->mau = -this->mau;
-
-        return;
-    }
-
-    friend istream& operator >> (istream &in, PhanSo &p) {
-        in >> p.tu >> p.mau;
-        p.rutGon();
-        return in;
-    }
-
-    friend ostream& operator << (ostream &out, PhanSo p) {
-        out << p.tu << "/" << p.mau;
-        return out;
-    }
-
-    // Tiền tố
-    PhanSo operator ++ () {
-        this->tu += 1;
-        return *this;
-    }
-
-    PhanSo operator -- () {
-        this->tu -= 1;
-        return *this;
-    }
-
-    // Hậu tố
-    PhanSo operator ++ (int) {
-        PhanSo tmp = *this;
-        this->tu += 1;
-        return tmp;
-    }
-
-    PhanSo operator -- (int) {
-        PhanSo tmp = *this;
-        this->tu -= 1;
-        return tmp;
-    }
+    int tu, mau;
 };
 
+istream &operator >> (istream &in, PhanSo &p) {
+    in >> p.tu >> p.mau;
+    return in;
+}
+
+ostream &operator << (ostream &out, PhanSo p) {
+    out << p.tu << '/' << p.mau;
+    return out;
+}
+
+// Tiền tố
+PhanSo operator ++ (PhanSo &p) {
+    p.tu += 1;
+    return p;
+}
+
+// Hậu tố
+PhanSo operator ++ (PhanSo &p, int) {
+    PhanSo prev = p;
+    p.tu += 1;
+    return prev;
+}
+
+PhanSo operator -- (PhanSo &p) {
+    p.tu -= 1;
+    return p;
+}
+
+PhanSo operator -- (PhanSo &p, int) {
+    PhanSo prev = p;
+    p.tu -= 1;
+    return prev;
+}
+
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-
-    PhanSo a; cin >> a;
-    char c; cin >> c;
-
-    cout << a << endl;
-    if (c == '+') cout << ++a;
-    else cout << --a;
-
+    PhanSo p;
+    string toanTu;
+    cin >> p >> toanTu;
+    
+    cout << p << endl;
+    
+    if (toanTu == "++")
+        cout << ++p;
+    else 
+        cout << --p;
+    
     return 0;
 }
