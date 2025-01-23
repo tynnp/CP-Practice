@@ -4,49 +4,48 @@ using namespace std;
 struct SinhVien {
     string hoVaTen;
     double diem[3];
-
-    friend istream& operator >> (istream &in, SinhVien &sinhVien) {
-        getline(in, sinhVien.hoVaTen);
-        for (double &x : sinhVien.diem) in >> x;
-        return in;
-    }
-
-    friend ostream& operator << (ostream &out, SinhVien sinhVien) {
-        out << sinhVien.hoVaTen;
-        // for (double x : sinhVien.diem) out << x << " ";
-        // out << sinhVien.diemTrungBinh();
-        return out;
-    }
-
-    double diemTrungBinh() {
-        double res = 0;
-        double a = this->diem[0];
-        double b = this->diem[1];
-        double c = this->diem[2];
-        res = (a + b + c) / 3;
-        return res;
-    }
-
-    bool operator < (SinhVien sinhVien) {
-        return this->diemTrungBinh() < sinhVien.diemTrungBinh();
+    
+    double DTB() {
+        return (diem[0] + diem[1] + diem[2]) / 3; 
     }
 };
 
+istream &operator >> (istream &in, SinhVien &sv) {
+    getline(in, sv.hoVaTen);
+    in >> sv.diem[0] >> sv.diem[1] >> sv.diem[2];
+    return in;
+}
+
+ostream &operator << (ostream &out, SinhVien sv) {
+    out << sv.hoVaTen;
+    return out;
+}
+
+bool operator < (SinhVien sv1, SinhVien sv2) {
+    return sv1.DTB() < sv2.DTB();
+}
+
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-
-    SinhVien sinhVien[100];
     int n = 0;
-    while (cin >> sinhVien[n]) {
-        cin.ignore();
+    SinhVien dsSV[100];
+    
+    while (cin >> dsSV[n]) {
         n++;
+        cin.ignore();
     }
-
-    SinhVien max = sinhVien[0];
-    for (int i = 1; i < n; i++) 
-        if (max < sinhVien[i]) max = sinhVien[i];
-
-    cout << max;
+    
+    double diemMax = 0;
+    
+    for (int i = 0; i < n; i++) 
+        if (dsSV[i].DTB() > diemMax)
+            diemMax = dsSV[i].DTB();
+    
+    for (int i = 0; i < n; i++) {
+        if (dsSV[i].DTB() == diemMax) {
+            cout << dsSV[i];
+            break;
+        }
+    }
+    
     return 0;
 }
