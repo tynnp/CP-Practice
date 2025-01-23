@@ -5,38 +5,39 @@ struct PhanSo {
     int tu, mau;
 };
 
-bool operator < (PhanSo p1, PhanSo p2) {
-    return p1.tu*p2.mau < p1.mau*p2.tu;
-}
-
-istream &operator >> (istream &in, PhanSo& p) {
+istream &operator >> (istream &in, PhanSo &p) {
     in >> p.tu >> p.mau;
     return in;
 }
 
 ostream &operator << (ostream &out, PhanSo p) {
-    out << p.tu << "/" << p.mau;
+    out << p.tu << '/' << p.mau;
     return out;
 }
 
-template <typename T>
-void max3So() {
+bool operator > (PhanSo a, PhanSo b) {
+    return a.tu * b.mau > a.mau * b.tu;
+}
+
+template<typename T>
+void timMax3So() {
     T a, b, c;
     cin >> a >> b >> c;
-    T max = a;
-    if (max < b) max = b;
-    if (max < c) max = c;
-    cout << max;
+    
+    T res = a;
+    if (b > res) res = b;
+    if (c > res) res = c;
+    
+    cout << res;
 }
 
 int main() {
-    char kt; cin >> kt;
-
-    switch(kt) {
-        case 'a': max3So<int>(); break;
-        case 'b': max3So<double>(); break;
-        case 'c': max3So<PhanSo>(); break;
-    }
-
+    char c;
+    cin >> c;
+    
+    if (c == 'a') timMax3So<int>();
+    if (c == 'b') timMax3So<float>();
+    if (c == 'c') timMax3So<PhanSo>();
+     
     return 0;
 }
