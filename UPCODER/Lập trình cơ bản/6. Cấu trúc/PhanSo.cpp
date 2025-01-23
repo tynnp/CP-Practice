@@ -1,47 +1,41 @@
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 struct PhanSo {
     int tu, mau;
-
-    void nhap() {
-        cin >> tu >> mau;
-        if (mau < 0) 
-            tu = -tu, 
-            mau = -mau;
-        return;
-    }
-
-    void xuat() {
-        cout << tu << "/" << mau;
-        return;
-    }
-
-    void rutGon() {
-        int ucln = __gcd(tu, mau);
-        tu /= ucln;
-        mau /= ucln;
-        return;
-    }
+    void nhap();
+    void xuat();
+    void rutGon();
 };
 
-
-
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-
-    int size; cin >> size;
-    PhanSo arr[size];
-    for (PhanSo &x : arr) x.nhap();
-
-    PhanSo res = arr[0];
-    for (int i = 1; i < size; i++)
-        if ((double) arr[i].tu/arr[i].mau < (double) res.tu/res.mau)
-            res = arr[i];
-
-    res.rutGon();
-    res.xuat();
+    int n;
+    cin >> n;
+    
+    PhanSo p[n];
+    for (int i = 0; i < n; i++)
+        p[i].nhap();
+        
+    PhanSo kq = p[0];
+    for (int i = 1; i < n; i++)
+        if ((float) kq.tu / kq.mau > (float) p[i].tu / p[i].mau)
+            kq = p[i];
+            
+    kq.xuat();
     return 0;
+}
+
+void PhanSo::nhap() {
+    cin >> tu >> mau;
+    rutGon();
+}
+
+void PhanSo::xuat() {
+    cout << tu << '/' << mau;
+}
+
+void PhanSo::rutGon() {
+    int ucln = __gcd(tu, mau);
+    tu /= ucln;
+    mau /= ucln;
 }
