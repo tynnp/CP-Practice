@@ -1,62 +1,55 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 struct SinhVien {
     string HoTen;
     int NamSinh;
     double DTB;
-    
-    void nhap(string ten, int nam, double diem) {
-        HoTen = ten;
-        NamSinh = nam;
-        DTB = diem;
-    }
-    
-    void xuat() {
-        cout << HoTen << ' ' << NamSinh << ' ' << DTB << endl;
-    }
 };
 
+istream& nhap(SinhVien &sv) {
+    return (cin >> sv.HoTen >> sv.NamSinh >> sv.DTB);
+}
+
+void xuat(SinhVien &sv) {
+    cout << sv.HoTen << ' ' << sv.NamSinh << ' ' << sv.DTB << endl;
+}
+
 int main() {
-    SinhVien sv[100];
     int n = 0;
+    SinhVien sv[100];
     
-    string ten;
-    int nam;
-    double diem;
-    
-    while (cin >> ten >> nam >> diem) {
-        sv[n].nhap(ten, nam, diem);
+    while (nhap(sv[n])) {
         n++;
     }
     
-    double diemCaoNhat = sv[0].DTB;
-    for (int i = 1; i < n; i++) {
-        if (diemCaoNhat < sv[i].DTB)
-            diemCaoNhat = sv[i].DTB;
-    }
+    double diemLonNhat = sv[0].DTB;
+    for (int i = 1; i < n; i++) 
+        if (diemLonNhat < sv[i].DTB)
+            diemLonNhat = sv[i].DTB;
     
-    double diemThapNhat = sv[0].DTB;
-    for (int i = 1; i < n; i++) {
-        if (diemThapNhat > sv[i].DTB)
-            diemThapNhat = sv[i].DTB;
-    }
+    double diemNhoNhat = sv[0].DTB;
+    for (int i = 1; i < n; i++)
+        if (diemNhoNhat > sv[i].DTB)
+            diemNhoNhat = sv[i].DTB;
     
     cout << "Diem cao nhat lop:\n";
-    int cnt = 1;
+    int idx = 1;
+    
     for (int i = 0; i < n; i++) {
-        if (sv[i].DTB == diemCaoNhat) {
-            cout << '#' << cnt++ << endl;
-            sv[i].xuat();
+        if (sv[i].DTB == diemLonNhat) {
+            cout << "#" << idx++ << endl;
+            xuat(sv[i]);
         }
     }
     
     cout << "Diem thap nhat lop:\n";
-    cnt = 1;
+    idx = 1;
+    
     for (int i = 0; i < n; i++) {
-        if (sv[i].DTB == diemThapNhat) {
-            cout << '#' << cnt++ << endl;
-            sv[i].xuat();
+        if (sv[i].DTB == diemNhoNhat) {
+            cout << "#" << idx++ << endl;
+            xuat(sv[i]);
         }
     }
     
