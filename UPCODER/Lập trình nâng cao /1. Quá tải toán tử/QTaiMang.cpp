@@ -1,76 +1,82 @@
 #include <iostream>
 using namespace std;
 
-struct MangMotChieu {
+struct Array {
     int size;
-    int values[100];
-
-    int& operator [] (int index);
-    void operator = (MangMotChieu &arr);
+    int items[100];
+    
+    Array operator = (Array other) {
+        size = other.size;
+        for (int i = 0; i < other.size; i++)
+            items[i] = other.items[i];
+        return other;
+    }
+    
+    int &operator [] (int index) {
+        return items[index];
+    }
 };
 
-istream& operator >> (istream &in, MangMotChieu &arr);
-ostream& operator << (ostream &out, MangMotChieu arr);
-MangMotChieu operator + (MangMotChieu arr1, MangMotChieu arr2);
-bool operator == (MangMotChieu arr1, MangMotChieu arr2);
-bool operator != (MangMotChieu arr1, MangMotChieu arr2);
-
-int main() {
-    MangMotChieu arr1, arr2;
-    cin >> arr1 >> arr2;
-    if (arr1 == arr2) cout << "yes";
-    else cout << "no";
-    return 0;
-}
-
-istream& operator >> (istream &in, MangMotChieu &arr) {
+istream& operator >> (istream &in, Array &arr) {
     in >> arr.size;
-    for (int i = 0; i < arr.size; ++i) 
-        in >> arr.values[i];
+    for (int i = 0; i < arr.size; i++)
+        in >> arr[i];
     return in;
 }
 
-ostream& operator << (ostream &out, MangMotChieu arr) {
-    for (int i = 0; i < arr.size; ++i) 
-        out << arr.values[i] << " ";
+ostream& operator << (ostream &out, Array arr) {
+    for (int i = 0; i < arr.size; i++)
+        out << arr[i] << ' ';
     return out;
 }
 
-void MangMotChieu::operator = (MangMotChieu &arr) {
-    size = arr.size;
-    for (int i = 0; i < arr.size; ++i) 
-        values[i] = arr.values[i];
-    return;
-}
-
-int& MangMotChieu::operator [] (int index) {
-    return values[index];
-}
-
-MangMotChieu operator + (MangMotChieu arr1, MangMotChieu arr2) {
-    MangMotChieu result;
-    result.size = max(arr1.size, arr2.size);
+Array operator + (Array a, Array b) {
+    Array res;
+    res.size = max(a.size, b.size);
     
-    for (int i = 0; i < result.size; ++i) {
-        if (i < arr1.size && i < arr2.size)
-            result[i] = arr1[i] + arr2[i];
-        else 
-            result[i] = (i < arr1.size ? arr1[i] : arr2[i]);
+    int i = 0, j = 0;
+    
+    while (i < a.size && j < b.size) {
+        res[i] = a[i] + b[j];
+        i++, j++;
     }
     
-    return result;
+    while (i < a.size) {
+        res[i] = a[i];
+        i++;
+    }
+    
+    while (j < b.size) {
+        res[j] = b[j];
+        j++;
+    }
+    
+    return res;
 }
 
-bool operator == (MangMotChieu arr1, MangMotChieu arr2) {
-    if (arr1.size != arr2.size) return false;
-    
-    for (int i = 0; i < arr1.size; ++i) 
-        if (arr1.values[i] != arr2.values[i]) 
-            return false;
+bool operator == (Array a, Array b) {
+    if (a.size != b.size)
+        return false;
         
+    for (int i = 0; i < a.size; i++) 
+        if (a[i] != b[i])
+            return false;
+            
     return true;
 }
 
-bool operator != (MangMotChieu arr1, MangMotChieu arr2) {
-    return !(arr1 == arr2);
+bool operator != (Array a, Array b) {
+    return !(a == b);
+}
+
+int main() {
+    Array a, b;
+    cin >> a >> b;
+    
+    if (a != b)
+        cout << "no";
+    else 
+        cout << "yes";
+    
+    return 0;
 }
