@@ -1,71 +1,74 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 struct PhanSo {
     int tu, mau;
-
-    friend istream& operator >> (istream &in, PhanSo &p) {
-        in >> p.tu >> p.mau;
-
-        if (p.mau < 0) 
-            p.tu = -p.tu, p.mau = -p.mau;
-
-        return in;
-    }
-
-    friend ostream& operator << (ostream &out, PhanSo p) {
-        int ucln = __gcd(p.tu, p.mau);
-        p.tu /= ucln, p.mau /= ucln;
-
-        out << p.tu << "/" << p.mau;
-        return out;
-    }
-
-    PhanSo operator + (PhanSo other) {
-        PhanSo res;
-        res.tu = tu*other.mau + mau*other.tu;
-        res.mau = mau * other.mau;
-        return res;
-    }
 };
 
-template <typename T>
-struct Array {
-    int size;
-    T values[100];
-
-    T tinhTong() {
-        T res = values[0];
-        for (int i = 1; i < size; i++)
-            res = res + values[i];
-        return res;
-    }
-};
-
-template <typename T>
-istream &operator >> (istream &in, Array<T> &arr) {
-    arr.size = 0;
-    while (in >> arr.values[arr.size]) 
-        arr.size++;
+istream &operator >> (istream &in, PhanSo &p) {
+    in >> p.tu >> p.mau;
     return in;
 }
 
+ostream &operator << (ostream &out, PhanSo p) {
+    out << p.tu << '/' << p.mau;
+    return out;
+}
+
+bool operator < (PhanSo a, PhanSo b) {
+    return a.tu * b.mau < a.mau * b.tu;
+}
+
 template<typename T>
-T tongDaySo() {
-    Array<T> arr;
-    cin >> arr;
-    return arr.tinhTong();
+struct Array {
+    int size = 0;
+    T items[100];
+    
+    T timMin() {
+        T res = items[0];
+        for (int i = 1; i < size; i++)
+            if (items[i] < res)
+                res = items[i];
+        return res;
+    }
+};
+
+template<typename T>
+istream &operator >> (istream &in, Array<T> &arr) {
+    in >> arr.items[arr.size];
+    arr.size++;
+    return in;
+}
+
+template<typename T> 
+ostream &operator << (ostream &out, Array<T> arr) {
+    if (arr.size == 0) {
+        out << "khong co";
+    } else {
+        out << arr.timMin();
+    }
 }
 
 int main() {
-    char c; 
-    cin >> c;
-
-    switch (c) {
-        case 'a': cout << tongDaySo<int>(); break;
-        case 'b': cout << tongDaySo<PhanSo>(); break;
+    char kt;
+    Array<int> a;
+    Array<float> b;
+    Array<PhanSo> c;
+    
+    while (cin >> kt) {
+        if (kt == 'a') cin >> a;
+        if (kt == 'b') cin >> b;
+        if (kt == 'c') cin >> c;
     }
-
+    
+    cout << a << endl;
+    cout << b << endl;
+    cout << c << endl;
+    
     return 0;
 }
+
+
+
+
+
