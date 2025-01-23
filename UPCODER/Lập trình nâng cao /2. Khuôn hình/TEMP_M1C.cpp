@@ -1,34 +1,35 @@
 #include <iostream>
 using namespace std;
 
-template <typename T>
+template<typename T>
 struct M1C {
-    int size = 0;
-    T values[100];
-
-    void nhap() {
-        T n; 
-        while (cin >> n)
-            values[size++] = n;
-        return;
-    }
-
-    int tong() {
-        T res = 0;
-        for (int i = 0; i < size; i++)
-            res = res + values[i];
+    int size;
+    T items[100];
+    
+    // int tong()
+    T tong() {
+        T res = items[0];
+        for (int i = 1; i < size; i++)
+            res += items[i];
         return res;
     }
-
+    
+    void nhap() {
+        size = 0;
+        
+        while (cin >> items[size]) {
+            size++;
+        }
+    }
+    
     void xuat() {
         cout << tong();
-        return;
     }
 };
 
 int main() {
-    M1C<int> arr;
-    arr.nhap();
-    arr.xuat();
+    M1C<int> a;
+    a.nhap();
+    a.xuat();
     return 0;
 }
