@@ -27,6 +27,8 @@ int main() {
         
     cout << ans;
     
-    delete[] a, b, check;
+    delete[] a;
+    delete[] b;
+    delete[] check;
     return 0;
 }
