@@ -2,17 +2,18 @@
 using namespace std;
 
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-
-    int arr[1000];
-    int m, n = 0;
-
-    cin >> m;
-    while (cin >> arr[n]) n++;
-
+    int idx, n = 0;
+    int a[100];
+    
+    cin >> idx;
+    while (cin >> a[n]) n++;
+    
+    n -= 1;
+    for (int i = idx; i < n; i++)
+        a[i] = a[i+1];
+        
     for (int i = 0; i < n; i++)
-        if (i != m) cout << arr[i] << " ";
-
+        cout << a[i] << ' ';
+    
     return 0;
 }
