@@ -1,52 +1,58 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 struct PhanSo {
-    int tu;
-    int mau;
+    int tu, mau;
 };
 
-istream& operator >> (istream& in, PhanSo& p);
-ostream& operator << (ostream& out, PhanSo p);
-PhanSo operator + (PhanSo p1, PhanSo p2);
-bool operator == (PhanSo p1, PhanSo p2);
-bool operator != (PhanSo p1, PhanSo p2);
+int gcd(int a, int b);
+istream &operator >> (istream &in, PhanSo &p);
+ostream &operator << (ostream &out, PhanSo p);
+PhanSo operator + (PhanSo a, PhanSo b);
+bool operator == (PhanSo a, PhanSo b);
+bool operator != (PhanSo a, PhanSo b);
 
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-
     PhanSo a, b;
     cin >> a >> b;
     cout << a + b;
     return 0;
 }
 
-istream& operator >> (istream& in, PhanSo& p) {
+int gcd(int a, int b) {
+    while (b != 0) {
+        int t = a % b;
+        a = b;
+        b = t;
+    }
+    
+    return a;
+}
+
+istream &operator >> (istream &in, PhanSo &p) {
     in >> p.tu >> p.mau;
     return in;
 }
 
-ostream& operator << (ostream& out, PhanSo p) {
-    int ucln = __gcd(p.tu, p.mau);
-    p.tu /= ucln;
-    p.mau /= ucln;
-    out << p.tu << "/" << p.mau;
+ostream &operator << (ostream &out, PhanSo p) {
+    int u = gcd(p.tu, p.mau);
+    p.tu /= u; 
+    p.mau /= u;
+    out << p.tu << '/' << p.mau;
     return out;
 }
 
-PhanSo operator + (PhanSo p1, PhanSo p2) {
+PhanSo operator + (PhanSo a, PhanSo b) {
     PhanSo res;
-    res.tu = p1.tu*p2.mau + p1.mau*p2.tu;
-    res.mau = p1.mau * p2.mau;
+    res.tu = a.tu * b.mau + b.tu * a.mau;
+    res.mau = a.mau * b.mau;
     return res;
 }
 
-bool operator == (PhanSo p1, PhanSo p2) {
-    return p1.tu*p2.mau == p1.mau*p2.tu;
+bool operator == (PhanSo a, PhanSo b) {
+    return a.tu * b.mau == b.tu * a.mau;
 }
 
-bool operator != (PhanSo p1, PhanSo p2) {
-    return !(p1 == p2);
+bool operator != (PhanSo a, PhanSo b) {
+    return !(a == b);
 }
