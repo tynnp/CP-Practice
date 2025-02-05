@@ -24,13 +24,14 @@ int main() {
 
         cout << *ptr << " ";
 
-        for (int *i = ptr; i != ptrEnd-1; i++)
+        for (int *i = ptr; i != ptrEnd - 1; i++)
             *i = *(i + 1);
         ptrEnd--;
 
         if (ptr == ptrEnd) ptr = arr;
     }
 
+    delete[] arr;
     return 0;
 }
 
@@ -39,9 +40,6 @@ int main() {
 // using namespace std;
 
 // int main() {
-//     ios_base::sync_with_stdio(0);
-//     cin.tie(0);
-
 //     int N, M; 
 //     cin >> N >> M;
 
