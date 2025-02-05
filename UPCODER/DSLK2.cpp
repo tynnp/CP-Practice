@@ -59,12 +59,9 @@ void solve(Node *&pHead) {
     if (pHead == nullptr)
         return;
 
-    bool ext[26] = {false};
     Node *cur = pHead;
-    while (cur) {
-        ext[cur->data - 'A'] = true;
+    while (cur) 
         cur = cur->pNext;
-    }
     
     Node *newHead = nullptr, *tail = nullptr;
     for (char ch = 'A'; ch <= 'Z'; ch++) {
