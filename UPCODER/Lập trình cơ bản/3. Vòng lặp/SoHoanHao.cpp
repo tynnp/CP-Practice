@@ -1,16 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-
-    int n, res = 0; 
+main() {
+    int n;
     cin >> n;
 
-    for (int i = 2; i < n/2; i++)
-        res += (n % i == 0 ? n/i + i : 0);
+    int sum = 0;
+    
+    for (int i = 1; i < n; i++)
+        if (n % i == 0)
+            sum += i;
 
-    cout << (res + 1 == n ? "Yes" : "No");
+    if (sum == n)
+        cout << "Yes";
+    else     
+        cout << "No";
+    
     return 0;
 }
