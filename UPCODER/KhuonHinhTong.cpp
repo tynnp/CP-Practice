@@ -26,7 +26,7 @@ int main() {
 
     while (cin >> c) {
         if (c == 'a') arrInt.input();
-        else if (c == 'b') arrPhanSo.input();
+        if (c == 'b') arrPhanSo.input();
     }
 
     if (arrInt.size != 0) 
