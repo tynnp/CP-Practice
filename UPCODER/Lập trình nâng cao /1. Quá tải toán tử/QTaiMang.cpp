@@ -69,6 +69,8 @@ Array operator + (Array a, Array b) {
         res[j] = b[j];
         j++;
     }
+
+    return res;
 }
 
 bool operator == (Array a, Array b) {
