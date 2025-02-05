@@ -2,14 +2,13 @@
 using namespace std;
 
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-
-    int arr[1000], n = 0;
-    while (cin >> arr[n]) n++;
-
+    int n = 0;
+    int a[100];
+    
+    while (cin >> a[n]) n++;
+    
     for (int i = 0; i < n; i++)
-        cout << arr[i] << " ";
+        cout << a[i] << ' ';
     
     return 0;
 }
