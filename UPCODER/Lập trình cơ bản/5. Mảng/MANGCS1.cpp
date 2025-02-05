@@ -1,23 +1,21 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    int x, v;
-    int n = 0, a[100];
+int main () {
+    int idx, val;
+    int n = 0, a[105];
     
-    cin >> x >> v;
+    cin >> idx >> val;
+    while (cin >> a[n]) n++;
     
-    while (cin >> a[n]) 
-        n++;
+    for (int i = n; i >= idx; i--)
+        a[i] = a[i-1];
         
-    for (int i = 0; i < n; i++) {
-        if (i == x) 
-            cout << v << ' ';
-        cout << a[i] << ' ';
-    }
+    a[idx] = val;
+    n += 1;
     
-    if (x == n)
-        cout << v;
+    for (int i = 0; i < n; i++)
+        cout << a[i] << ' ';
     
     return 0;
 }
