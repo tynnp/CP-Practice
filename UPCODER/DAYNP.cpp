@@ -1,19 +1,28 @@
 #include <iostream>
 using namespace std;
 
-void dayNhiPhan(string str, int n) {
-    if (str.length() == n) {
-        cout << str + '\n' << endl;
+int n, a[100];
+
+void print() {
+    for (int i = 0; i < n; i++)
+        cout << a[i];
+    cout << endl;
+}
+
+void solve(int idx) {
+    if (idx == n) {
+        print();
         return;
-    } 
-    dayNhiPhan(str + '0', n);
-    dayNhiPhan(str + '1', n);
+    }
+    
+    a[idx] = 0;
+    solve(idx + 1);
+    a[idx] = 1;
+    solve(idx + 1);
 }
 
 int main() {
-    int n; 
     cin >> n;
-    string str = "";
-    dayNhiPhan(str, n);
+    solve(0);
     return 0;
 }
