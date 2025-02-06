@@ -14,14 +14,15 @@ struct LinkedList {
     void add(int n) {
         Node* node = new Node(n);
         
-        if (this->head == nullptr)
+        if (this->head == nullptr) {
             this->head = node;
-        else {
-            Node* tmp = this->head;
-            while (tmp->next != nullptr)
-                tmp = tmp->next;
-            tmp->next = node;
+            return;
         }
+
+        Node* tmp = this->head;
+        while (tmp->next != nullptr)
+            tmp = tmp->next;
+        tmp->next = node;
     }
 
     int max() {
@@ -100,11 +101,10 @@ struct LinkedList {
 int main() {
     LinkedList list;
 
-    int n; 
+    int tmp, n; 
     cin >> n;
     
     for (int i = 0; i < n; i++) {
-        int tmp; 
         cin >> tmp;
         list.add(tmp);
     }
