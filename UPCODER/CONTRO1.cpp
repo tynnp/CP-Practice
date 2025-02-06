@@ -101,12 +101,12 @@ struct LinkedList {
 int main() {
     LinkedList list;
 
-    int tmp, n; 
+    int x, n; 
     cin >> n;
     
     for (int i = 0; i < n; i++) {
-        cin >> tmp;
-        list.add(tmp);
+        cin >> x;
+        list.add(x);
     }
 
     cout << list.max() << endl; 
