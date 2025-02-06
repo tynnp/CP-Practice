@@ -43,8 +43,6 @@ struct LinkedList {
                 delete nodeToRemove;
             } else tmp = tmp->next;
         }
-
-        return;
     }
 
     int length() {
@@ -78,7 +76,6 @@ struct LinkedList {
         }
 
         this->head = nullptr;
-        return;
     }
 };
 
