@@ -64,7 +64,6 @@ struct LinkedList {
         }
 
         cout << endl;
-        return;
     }
 
     void xuatViTriMin() {
@@ -80,7 +79,6 @@ struct LinkedList {
         }
 
         cout << endl;
-        return;
     }
 
     ~LinkedList() {
@@ -94,7 +92,6 @@ struct LinkedList {
         }
 
         this->head = nullptr;
-        return;
     }
 };
 
