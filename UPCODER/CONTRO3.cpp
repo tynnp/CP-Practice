@@ -56,8 +56,6 @@ struct Linkedlist {
             node->next = tmp->next;
             tmp->next = node;
         }
-
-        return;
     }
 
     void print() {
@@ -79,7 +77,6 @@ struct Linkedlist {
         }
 
         this->head = nullptr;
-        return;
     }
 }; 
 
