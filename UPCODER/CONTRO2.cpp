@@ -84,13 +84,12 @@ struct LinkedList {
 
 int main() {
     LinkedList list;
-    int n, k; 
+    int x, n, k; 
     cin >> n >> k;
 
     for (int i = 0; i < n; i++) {
-        int tmp; 
-        cin >> tmp;
-        list.add(tmp);
+        cin >> x;
+        list.add(x);
     }
 
     list.remove(k);
