@@ -6,9 +6,31 @@ struct SoLaMa {
     int val;
 };
 
+istream &operator >> (istream &in, SoLaMa &slm);
+ostream &operator << (ostream &out, SoLaMa slm);
+bool operator < (SoLaMa a, SoLaMa b);
+int operator + (SoLaMa a, SoLaMa b);
+int operator + (SoLaMa slm, int x);
+
+int main() {
+    SoLaMa a, b;
+    cin >> a >> b;
+    
+    cout << a << endl;
+    cout << b << endl;
+    cout << a + b << endl;
+    
+    if (a < b)
+        cout << "true";
+    else 
+        cout << "false";
+        
+    return 0;
+}
+
 istream &operator >> (istream &in, SoLaMa &slm) {
     string s;
-    cin >> s;
+    in >> s;
     
     for (int i = 1; i <= 10; i++)
         if (slm.kt[i] == s) 
@@ -32,20 +54,4 @@ int operator + (SoLaMa a, SoLaMa b) {
 
 int operator + (SoLaMa slm, int x) {
     return slm.val + x;
-}
-
-int main() {
-    SoLaMa a, b;
-    cin >> a >> b;
-    
-    cout << a << endl;
-    cout << b << endl;
-    cout << a + b << endl;
-    
-    if (a < b)
-        cout << "true";
-    else 
-        cout << "false";
-        
-    return 0;
 }
