@@ -1,0 +1,11 @@
+--------------- duoi day la nhung bai chua giai --------------------
+MAXHCN2
+DATEARRAY
+DUHA
+Mario
+r1b4.TIMCHUSO
+DIGITSUM
+r1b1.CHUOIMU
+r1b3.HALL
+PERFECTPOWERS
+--------------------------------------------------------------------
