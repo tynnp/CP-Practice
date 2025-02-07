@@ -8,4 +8,5 @@ DIGITSUM
 r1b1.CHUOIMU
 r1b3.HALL
 PERFECTPOWERS
+TRAODOISACH
 --------------------------------------------------------------------
