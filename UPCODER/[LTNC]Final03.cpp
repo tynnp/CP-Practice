@@ -6,7 +6,7 @@ int main() {
     string s; 
     vector<string> st;
     while (cin >> s) 
-        t.push_back(s);
+        st.push_back(s);
 
     if (st.size() == 2) 
         cout << st[0] << endl << st[1]; 
