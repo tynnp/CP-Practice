@@ -2,7 +2,7 @@
 using namespace std;
 
 int n;
-int a[1001], f[1001];
+int a[10005], f[10005];
 
 int main() {
     cin >> n;
@@ -16,6 +16,6 @@ int main() {
             if (a[j] < a[i] && f[j] >= f[i])
                 f[i] = f[j] + 1;
                 
-    cout << *max_element(f, f + n);
+    cout << *max_element(f, f + n + 1);
     return 0;
 }
