@@ -21,7 +21,7 @@ int32_t main() {
     x = ans = INT_MIN;
     for (int i = 3; i <= n; i++) {
         x = max(x, b[i-1] + 2 * a[i-1]);
-        ans = (ans, x + 3 * a[i]);
+        ans = max(ans, x + 3 * a[i]);
     }
     
     cout << ans;
