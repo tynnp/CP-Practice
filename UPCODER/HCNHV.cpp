@@ -49,6 +49,7 @@ int main() {
         for (int i = 0; i < n; i++)
             if (max < hcn[i].tinhChuVi())
                 max = hcn[i].tinhChuVi();
+    }
 
     if (hinh == "HV") {
         while (cin >> hv[n]) n++;
