@@ -18,10 +18,7 @@ void xuat(SinhVien &sv) {
 int main() {
     int n = 0;
     SinhVien sv[100];
-    
-    while (nhap(sv[n])) {
-        n++;
-    }
+    while (nhap(sv[n])) n++;
     
     double diemLonNhat = sv[0].DTB;
     for (int i = 1; i < n; i++) 
