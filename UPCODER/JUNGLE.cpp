@@ -1,11 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 const int MAXN = 1e6 + 5;
+#define int long long
 
 int n, m;
 bool prime[MAXN];
 
-int main() {
+int32_t main() {
     cin >> n >> m;
     fill(prime, prime + MAXN, true);    
     
