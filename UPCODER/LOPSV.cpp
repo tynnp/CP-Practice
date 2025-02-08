@@ -15,7 +15,8 @@ public:
 
     void nhap() {
         getline(cin, hoTen);
-        cin >> namSinh; cin.ignore();
+        cin >> namSinh; 
+        cin.ignore();
         getline(cin, queQuan);
     }
 
