@@ -12,8 +12,8 @@ int main() {
     
     while (cin >> n) {
         int k = 0;
-        while (v[k] < n) k++;
-        cout << v[k] << '\n';
+        while (a[k] < n) k++;
+        cout << a[k] << '\n';
     }
     
     return 0;
