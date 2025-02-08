@@ -19,7 +19,8 @@ int main() {
     for (int &x : a) cin >> x;
 
     for (int x : a) 
-        if (chinhPhuong(x)) cout << x << " "; cout << endl;
+        if (chinhPhuong(x)) cout << x << " "; 
+    cout << endl;
     
     for (int x : a) 
         if (nguyenTo(x)) cout << x << " "; 
