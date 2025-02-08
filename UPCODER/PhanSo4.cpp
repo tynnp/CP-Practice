@@ -28,7 +28,7 @@ int main() {
 
     ans = arr[0];
     for (int i = 1; i < n; i++)
-        if (ans.tu * arr[i].mau > ans.tu * arr[i].mau)
+        if (ans.tu * arr[i].mau > ans.mau * arr[i].tu)
             ans = arr[i];
 
     ans.rutGon();
