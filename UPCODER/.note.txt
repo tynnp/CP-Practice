@@ -74,4 +74,5 @@ MINIGAME12.2:PASSWORDS
 InvFact
 R6.3:Earth
 R6.5:Stick
+SQCOUNT
 --------------------------------------------------------------------
