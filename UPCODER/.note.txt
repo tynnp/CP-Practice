@@ -72,4 +72,5 @@ SHEEPS
 APPLE
 MINIGAME12.2:PASSWORDS
 InvFact
+R6.3:Earth
 --------------------------------------------------------------------
