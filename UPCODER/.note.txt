@@ -62,4 +62,5 @@ ACM2016_North_I
 ACM2016_North_K
 KthNumber
 StringProcessing
+REVERSI
 --------------------------------------------------------------------
