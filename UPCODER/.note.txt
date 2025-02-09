@@ -75,4 +75,5 @@ InvFact
 R6.3:Earth
 R6.5:Stick
 SQCOUNT
+MINIGAME13:NHAYCAU
 --------------------------------------------------------------------
