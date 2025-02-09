@@ -62,8 +62,7 @@ int query(int id, int u, int v, int l, int r) {
     return x + y;
 }
 
-signed main() {
-    fastIO;
+int main() {
     cin >> n >> q;
 
     for (int i = 1; i <= n; i++)
