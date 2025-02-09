@@ -63,6 +63,7 @@ int query(int id, int u, int v, int l, int r) {
 }
 
 int main() {
+    cin.tie(0) -> sync_with_stdio(0);
     cin >> n >> q;
 
     for (int i = 1; i <= n; i++)
