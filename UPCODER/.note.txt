@@ -82,4 +82,5 @@ ROBOTTAO
 QUANTUONG
 SPIRALBOARD
 ICPCSCORE
+CUT
 --------------------------------------------------------------------
