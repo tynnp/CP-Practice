@@ -3,7 +3,7 @@ using namespace std;
 const int MAXN = 1e6 + 5;
 
 int n, m, a, b;
-int ar[MAXN], sum[MAXN];
+int64_t ar[MAXN], sum[MAXN];
 
 int main() {
     cin >> n >> m;
