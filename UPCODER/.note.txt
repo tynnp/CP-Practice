@@ -66,4 +66,5 @@ REVERSI
 PLACEINCLASS
 COW_HEIGHT
 NUMBERGAME
+PAMAZE
 --------------------------------------------------------------------
