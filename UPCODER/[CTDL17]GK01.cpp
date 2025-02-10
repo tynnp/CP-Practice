@@ -39,7 +39,7 @@ int main() {
     for (int i = 0; i < n; i++) 
         ans.push_back({v[i], divCnt[i]});
     
-    sort(ans.begin(), ans.end(), [](auto &a, auto &b) {
+    sort(ans.begin(), ans.end(), [] (auto &a, auto &b) {
         if(a.second == b.second)
             return a.first < b.first;
         return a.second < b.second;
