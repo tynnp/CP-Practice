@@ -236,3 +236,4 @@ LTHDT_Dathuc_03
 1718_LTCB_TH_06
 testa
 kjll
+PRIMEPOWER
