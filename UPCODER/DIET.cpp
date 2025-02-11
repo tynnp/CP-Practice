@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define int64_t
+#define int int64_t
 const int MAXN = 1e5 + 5;
 
 int n, a[MAXN], b[MAXN], c[MAXN];
