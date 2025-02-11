@@ -23,7 +23,7 @@ void build(int id, int l, int r) {
 
 int getMax(int id, int l, int r, int u, int v) {
     if (l > v || r < u)
-        return INT_MIN;
+        return INT64_MIN;
 
     if (l >= u && r <= v)
         return stmax[id];
@@ -37,7 +37,7 @@ int getMax(int id, int l, int r, int u, int v) {
 
 int getMin(int id, int l, int r, int u, int v) {
     if (l > v || r < u)
-        return INT_MAX;
+        return INT64_MAX;
 
     if (l >= u && r <= v)
         return stmin[id];
@@ -50,21 +50,22 @@ int getMin(int id, int l, int r, int u, int v) {
 }
 
 int32_t main() {
-    cin.tie(0) -> sync_with_stdio(0);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
     cin >> n >> q;
 
     for (int i = 1; i <= n; i++)
         cin >> a[i];
-    build(1, 1, n);
+    build(1, 1, MAXN - 1);
 
     while (q--) {
         int l, r;
         cin >> l >> r;
 
-        int maxVal = getMax(1, 1, n, l, r);
-        int minVal = getMin(1, 1, n, l, r);
+        int maxVal = getMax(1, 1, MAXN - 1, l, r);
+        int minVal = getMin(1, 1, MAXN - 1, l, r);
 
-        cout << abs(maxVal - minVal) << endl;
+        cout << maxVal - minVal << '\n';
     }
     
     return 0;
