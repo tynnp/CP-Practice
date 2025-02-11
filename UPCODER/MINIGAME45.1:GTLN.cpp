@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int MAXLEN = 105;
+const int MAXLEN = 1011;
 string a, b, dp[MAXLEN][MAXLEN];
 
 string best(string s1, string s2) {
@@ -40,6 +40,10 @@ int main() {
             dp[i][j] = "#";
     
     string ans = Try(0, 0);
+    
+    while (ans.size() > 0 && ans[0] == '0') 
+        ans.erase(0, 1);
+    
     cout << ans;
     return 0;
 }
