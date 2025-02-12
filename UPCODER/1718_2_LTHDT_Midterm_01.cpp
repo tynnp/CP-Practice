@@ -8,6 +8,7 @@ private:
     string firstName;
     string lastName;
     double salary;
+    
 public: 
     Employee() {}
 
