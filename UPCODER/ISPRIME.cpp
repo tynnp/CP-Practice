@@ -32,10 +32,7 @@ bool check(string s) {
         
     }
 
-    int n = s[0] - '0';
-    if (n < 2) 
-        return false;
-    return prime(n);
+    return prime(s[0] - '0');
 }
 
 int main() {
