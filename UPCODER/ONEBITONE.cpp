@@ -1,10 +1,13 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int main() {
-    int64_t n, k;
+int main(){
+    int64_t n, ans = 1;
     cin >> n;
-    k = log2(n);
-    cout << pow(2, k);
+    
+    while(ans * 2 <= n)
+        ans *= 2;
+        
+    cout << ans;
     return 0;
 }
