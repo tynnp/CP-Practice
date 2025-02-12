@@ -3,7 +3,6 @@ using namespace std;
 
 string n;
 int pos[10];
-vector<char> v;
 
 int main() {
     cin >> n;
