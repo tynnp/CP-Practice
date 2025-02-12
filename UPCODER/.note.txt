@@ -299,4 +299,3 @@ ExternLCM
 1721com141_nangcao4
 1721com141_nangcao5
 1721com141_luyentap1
-1721com141_luyentap2
