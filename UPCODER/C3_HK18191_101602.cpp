@@ -53,24 +53,24 @@ int front(Node *pHead) {
 
 void clear(Node *&pHead) {
     while (pHead != nullptr) {
-        Node *tmp = pHead;
+        Node *cur = pHead;
         pHead = pHead->pNext;
-        delete tmp;
+        delete cur;
     }
 }
 
 void push_back(Node *&pHead, int value) {
     Node *node = new Node(value);
-    Node *tmp = pHead;
+    Node *cur = pHead;
 
     if (pHead == nullptr) {
         pHead = node;
         return;
     }
 
-    while (tmp->pNext != nullptr) 
-        tmp = tmp->pNext;
-    tmp->pNext = node;
+    while (cur->pNext != nullptr) 
+        cur = cur->pNext;
+    cur->pNext = node;
 }
 
 void push_front(Node *&pHead, int value) {
@@ -80,7 +80,7 @@ void push_front(Node *&pHead, int value) {
 }
 
 void pop_front(Node *&pHead) {
-    Node *tmp = pHead;
+    Node *cur = pHead;
     pHead = pHead->pNext;
-    delete tmp;
+    delete cur;
 }
