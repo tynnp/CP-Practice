@@ -480,3 +480,4 @@ Bai4-CODE47
 Bai1-MAXMIN
 FreeBGN_CANDY
 FCBGN.Candy
+FirstDigit
