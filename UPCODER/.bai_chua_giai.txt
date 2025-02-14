@@ -403,3 +403,9 @@ icpc-jakarta-2017-g
 icpc-jakarta-2017-d
 icpc-jakarta-2017-c
 icpc-jakarta-2017-e
+icpc-jakarta-2017-a
+icpc-jakarta-2017-j
+icpc-jakarta-2017-k
+icpc-jakarta-2017-f
+icpc-jakarta-2017-L
+icpc-jakarta-2017-h
