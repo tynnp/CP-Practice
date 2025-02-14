@@ -410,3 +410,4 @@ icpc-jakarta-2017-f
 icpc-jakarta-2017-L
 icpc-jakarta-2017-h
 Europe-Central-2014-A
+Europe-Central-2014-B
