@@ -408,3 +408,12 @@ icpc-jakarta-2017-L
 icpc-jakarta-2017-h
 Europe-Central-2014-A
 Europe-Central-2014-B
+Europe-Central-2014-C
+Europe-Central-2014-D 
+Europe-Central-2014-E 
+Europe-Central-2014-F 
+Europe-Central-2014-G 
+Europe-Central-2014-H 
+Europe-Central-2014-I 
+Europe-Central-2014-K 
+Europe-Central-2014-L
