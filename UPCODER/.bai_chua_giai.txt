@@ -399,3 +399,4 @@ C3_TAMGIAC7
 C1_XUATDIEM2
 icpc-jakarta-2017-b
 icpc-jakarta-2017-i
+icpc-jakarta-2017-g
