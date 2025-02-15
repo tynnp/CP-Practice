@@ -14,7 +14,5 @@ int main() {
     cout << "&n stores the address of n = " << &n << '\n';
     cout << "&o stores the address of o = " << &o << '\n';
     cout << "&z stores the address of z = " << &z << '\n';
-
-    delete z;
     return 0;
 }
