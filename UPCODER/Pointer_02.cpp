@@ -19,7 +19,5 @@ int main() {
     *ab = 7;
     cout << "Address of m: " << &m << '\n';
     cout << "Value of m: " << m << '\n';
-    
-    delete ab;
     return 0;
 }
