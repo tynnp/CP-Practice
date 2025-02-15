@@ -40,5 +40,8 @@ int main() {
     cout << " value at address of fx= " << *ptr_fx << "\n";
     cout << " value at address of cht= " << *ptr_cht << "\n";
     
+    delete ptr_m;
+    delete ptr_fx;
+    delete ptr_cht;
     return 0;
 }
