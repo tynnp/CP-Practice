@@ -20,5 +20,6 @@ int main() {
     cout << "Address of m: " << &m << '\n';
     cout << "Value of m: " << m << '\n';
     
+    delete ab;
     return 0;
 }
