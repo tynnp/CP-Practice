@@ -578,3 +578,13 @@ nwerc2018.cau8
 nwerc2018.cau9
 nwerc2018.cau10
 nwerc2018.cau11
+neerc2018.A
+neerc2018.B
+neerc2018.C
+neerc2018.E
+neerc2018.F
+neerc2018.G
+neerc2018.I
+neerc2018.J
+neerc2018.L
+neerc2018.M
