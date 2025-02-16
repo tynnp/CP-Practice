@@ -569,3 +569,12 @@ OLP19.06.BOMBONI
 OLP19.05.SOCOLALA
 OLP19.03.POSAO
 OLP19.04.TEGLE
+nwerc2018.Cau1
+nwerc2018.cau3
+nwerc2018.cau4
+nwerc2018.cau5
+nwerc2018.cau7
+nwerc2018.cau8
+nwerc2018.cau9
+nwerc2018.cau10
+nwerc2018.cau11
