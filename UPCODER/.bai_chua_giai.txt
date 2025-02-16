@@ -593,3 +593,13 @@ DIJKSTRA_FORDBELLMAN
 FLOYD
 ChiaVoHan
 PPDHPT_N2_C2
+GreaterNY-2018-A
+GreaterNY-2018-B
+GreaterNY-2018-C
+GreaterNY-2018-D
+GreaterNY-2018-E
+GreaterNY-2018-F 
+GreaterNY-2018-G
+GreaterNY-2018-H
+GreaterNY-2018-I
+GreaterNY-2018-J
