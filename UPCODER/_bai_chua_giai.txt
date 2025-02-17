@@ -649,3 +649,4 @@ KNIGHT
 DataStructure
 Rokkufind
 CovertChar
+HelpMe
