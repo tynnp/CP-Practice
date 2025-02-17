@@ -7,8 +7,7 @@ int a[MAXN][MAXN];
 int ans[MAXN][MAXN];
 pair<int, int> r[MAXN];
 
-signed main() {
-    fastIO;
+int main() {
     cin >> n >> m;
 
     for (int i = 0; i < n; i++) {
