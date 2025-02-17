@@ -648,3 +648,4 @@ SX_DONGCOT_MATRAN
 KNIGHT
 DataStructure
 Rokkufind
+CovertChar
