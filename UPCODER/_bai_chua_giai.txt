@@ -643,3 +643,4 @@ _cau2_ca2
 _cau3_ca2
 PT
 NamVaHa
+TKN_BITWISE
