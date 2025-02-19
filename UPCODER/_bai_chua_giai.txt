@@ -663,7 +663,6 @@ SACH_E03
 IntegertoRoman
 GivenLength&SumofDigits
 TeamPUBG
-ABC171.BaiB
 ABC171.BaiC
 ABC171.BaiD
 ABC171.BaiF
