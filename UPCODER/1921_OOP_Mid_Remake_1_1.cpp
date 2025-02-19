@@ -6,6 +6,7 @@ private:
     string id;
     int n;
     int *scores;
+    
 public:
     Contestant() {
         id = "";
