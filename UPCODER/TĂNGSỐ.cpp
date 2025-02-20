@@ -10,6 +10,6 @@ int main() {
         else s[i] = s[i] + 1;
     }
 
-    cout << str;
+    cout << s;
     return 0;
 }
