@@ -236,9 +236,9 @@ void List<DataType>::remove(DataType x) {
     Node<DataType>* cur = head;
     while (cur->next) {
         if (cur->next->data == x) {
-            Node<DataType>* cur = cur->next;
-            cur->next = cur->next;
-            delete cur;
+            Node<DataType>* del = cur->next;
+            cur->next = del->next;
+            delete del;
             return;
         }
         
