@@ -1,44 +1,33 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int n, ans;
-const int MAXN = 20 + 5;
-int c[MAXN][MAXN];
+bool c[25], chinh[25], phu[25];
 
-bool check(int row, int col) {
-    for (int i = 1; i <= row; i++)
-        if (c[i][col])
-            return false;
-
-    for (int i = row, j = col; i >= 1 && j >= 1; i--, j--)
-        if (c[i][j])
-            return false;
-
-    for (int i = row, j = col; i >= 1 && j <= n; i--, j++)
-        if (c[i][j])
-            return false;
-
-    return true;
-}
-
-void Try(int row) {
-    if (row > n) {
+void Try(int i) {
+    if (i == n) {
         ans++;
         return;
     }
-
-    for (int col = 1; col <= n; col++) {
-        if (check(row, col)) {
-            c[row][col] = 1;
-            Try(row + 1);
-            c[row][col] = 0;
+    
+    for (int j = 0; j < n; j++) {
+        if (!c[j] && !chinh[i - j + n] && !phu[i + j]) {
+            c[j] = true;
+            chinh[i - j + n] = true;
+            phu[i + j] = true;
+            
+            Try(i + 1);
+            
+            c[j] = false;
+            chinh[i - j + n] = false;
+            phu[i + j] = false;
         }
     }
 }
 
 int main() {
     cin >> n;
-    Try(1);
-    cout << ans;    
+    Try(0);
+    cout << ans;
     return 0;
 }
