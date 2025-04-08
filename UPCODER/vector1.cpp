@@ -5,16 +5,19 @@ using namespace std;
 int main() {
     int x;
     vector<int> v;
-
-    while (cin >> x)
+    
+    while (cin >> x) {
         v.push_back(x);
-
-    for (auto it = v.begin(); it != v.end(); it++)
+    }
+    
+    vector<int>::iterator it = v.begin();
+    for (it; it != v.end(); it++)
         cout << *it << ' ';
     cout << endl;
-
-    for (auto it = v.rbegin(); it != v.rend(); it++)
-        cout << *it << ' ';
-
+        
+    vector<int>::reverse_iterator rit = v.rbegin();
+    for (rit; rit != v.rend(); rit++)
+        cout << *rit << ' ';
+        
     return 0;
 }
