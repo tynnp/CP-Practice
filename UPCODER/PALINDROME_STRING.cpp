@@ -1,29 +1,19 @@
 #include <iostream>
+#include <algorithm>
+#include <cctype>
 using namespace std;
 
-bool kiTu(char c) {
-    return c >= 'a' && c <= 'z';
-}
-
 int main() {
-    string str, res = "";
-    getline(cin, str);
-    bool check = true;
-    int len = str.length();
-
-    for (int i = 0; i < len; i++) {
-        char tmp = tolower(str[i]);
-        if (kiTu(tmp)) res += tmp;
-    }
-
-    len = res.length();
-    for (int i = 0; i <= len/2; i++) {
-        if (res[i] != res[len-1-i]) {
-            check = false;
-            break;
-        }
-    }
-
-    cout << (check ? "YES" : "NO");
+    string s;
+    getline(cin, s);
+    transform(s.begin(), s.end(), s.begin(), ::tolower);
+    
+    s.erase(remove_if(s.begin(), s.end(), [] (char c ) {
+        return !isalpha(c);
+    }), s.end());
+    
+    string t = s;
+    reverse(t.begin(), t.end());
+    cout << (s == t ? "YES" : "NO");
     return 0;
 }
