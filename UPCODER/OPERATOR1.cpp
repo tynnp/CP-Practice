@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 
 struct Diem {
@@ -25,6 +26,7 @@ struct HT {
 
 istream& operator >> (istream &in, Diem &diem);
 ostream& operator << (ostream &out, Diem diem);
+bool operator == (Diem a, Diem b);
 double operator - (Diem a, Diem b);
 
 istream& operator >> (istream &in, HCN &hcn);
@@ -46,58 +48,59 @@ bool operator < (HT a, HT b);
 bool operator > (HT a, HT b);
 
 int main() {
-    ifstream ifile("HINH.inp");
-    ofstream ofile("HINH.out");
+    ifstream fin("HINH.inp");
+    ofstream fout("HINH.out");
     
     HCN hcn1, hcn2; 
     TGV tgv1, tgv2; 
     HT ht1, ht2;
     
-    ifile >> hcn1 >> hcn2;
-    ifile >> tgv1 >> tgv2;
-    ifile >> ht1 >> ht2;
+    fin >> hcn1 >> hcn2;
+    fin >> tgv1 >> tgv2;
+    fin >> ht1 >> ht2;
 
-    ofile << hcn1 << " " << hcn2 << endl;
-    ofile << tgv1 << " " << tgv2 << endl;
-    ofile << ht1 << " " << ht2 << endl;
+    fout << hcn1 << " " << hcn2 << endl;
+    fout << tgv1 << " " << tgv2 << endl;
+    fout << ht1 << " " << ht2 << endl;
 
-    ofile << hcn1 + hcn2 << endl;
-    ofile << tgv1 + tgv2 << endl;
-    ofile << ht1 + ht1 << endl;
+    fout << fixed << setprecision(2);
+    fout << hcn1 + hcn2 << endl;
+    fout << tgv1 + tgv2 << endl;
+    fout << ht1 + ht2 << endl;
 
-    if (hcn1 > hcn2) ofile << "1 > 2" << endl;
-    else if (hcn1 < hcn2) ofile << "1 < 2" << endl;
-    else ofile << "1 = 2" << endl;
+    if (hcn1 > hcn2) fout << "1 > 2" << endl;
+    else if (hcn1 < hcn2) fout << "1 < 2" << endl;
+    else fout << "1 = 2" << endl;
 
-    if (tgv1 > tgv2) ofile << "1 > 2" << endl;
-    else if (tgv1 < tgv2) ofile << "1 < 2" << endl;
-    else ofile << "1 = 2" << endl;
+    if (tgv1 > tgv2) fout << "1 > 2" << endl;
+    else if (tgv1 < tgv2) fout << "1 < 2" << endl;
+    else fout << "1 = 2" << endl;
 
-    if (ht1 > ht2) ofile << "1 > 2" << endl;
-    else if (ht1 < ht2) ofile << "1 < 2" << endl;
-    else ofile << "1 = 2" << endl;
+    if (ht1 > ht2) fout << "1 > 2" << endl;
+    else if (ht1 < ht2) fout << "1 < 2" << endl;
+    else fout << "1 = 2" << endl;
  
-    ifile.close();
-    ofile.close();
+    fin.close();
+    fout.close();
     return 0;
 }
 
 double HCN::dienTich() {
-    double ab = this->a - this->b;
-    double bc = this->b - this->c;
+    double ab = a - b;
+    double bc = b - c;
     return ab * bc;
 }
 
 double TGV::dienTich() {
-    double ab = this->a - this->b;
-    double bc = this->b - this->c;
-    double ca = this->c - this->a;
+    double ab = a - b;
+    double bc = b - c;
+    double ca = c - a;
     double p = (ab + bc + ca)/2;
     return sqrt(p * (p - ab) * (p - bc) * (p - ca));
 }
 
 double HT::dienTich() {
-    return banKinh * banKinh * 3.14;
+    return banKinh * banKinh * M_PI;
 }
 
 istream& operator >> (istream &in, Diem &diem) {
@@ -110,6 +113,10 @@ ostream& operator << (ostream &out, Diem diem) {
     return out;
 }
 
+bool operator == (Diem a, Diem b) {
+    return a.x == b.x && a.y == b.y;
+}
+
 double operator - (Diem a, Diem b) {
     return sqrt(pow(b.x - a.x, 2) + pow(b.y - a.y, 2));
 }
@@ -120,7 +127,7 @@ istream& operator >> (istream &in, HCN &hcn) {
 }
 
 ostream& operator << (ostream &out, HCN hcn) {
-    out << hcn.a << hcn.b << hcn.c << hcn.d;
+    out << hcn.a << " " << hcn.b << " " << hcn.c << " " << hcn.d;
     return out;
 }
 
@@ -142,7 +149,7 @@ istream& operator >> (istream &in, TGV &tgv) {
 }
 
 ostream& operator << (ostream &out, TGV tgv) {
-    out << tgv.a << tgv.b << tgv.c;
+    out << tgv.a << " " << tgv.b << " " << tgv.c;
     return out;
 }
 
