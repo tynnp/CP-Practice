@@ -137,33 +137,31 @@ int main() {
         getline(cin, diChuyen);
         stringstream ss(diChuyen);
 
-        string tmp; 
-        int cnt = 1;
-        while (ss >> tmp) {
-            if (tmp == "-1") break;
+        int x, cnt = 1;
+        while (ss >> x) {
+            if (x == -1) break;
 
-            int number = stoi(tmp);
-            if (number == 4) 
+            if (x == 4) 
                 danhSach[i]->Charge();
             else if (name[0] != 'A') 
-                danhSach[i]->Move(number);
+                danhSach[i]->Move(x);
 
             else if (danhSach[i]->getEnergyLevel() > 50) {
-                danhSach[i]->Move(number);
-                ss >> tmp; number = stoi(tmp);
-                danhSach[i]->Move(number);
-                ss >> tmp; number = stoi(tmp);
-                danhSach[i]->Move(number);
+                danhSach[i]->Move(x);
+                ss >> x; 
+                danhSach[i]->Move(x);
+                ss >> x; 
+                danhSach[i]->Move(x);
                 danhSach[i]->setEnergyLevel(danhSach[i]->getEnergyLevel()-12);
 
             } else if (danhSach[i]->getEnergyLevel() > 20) {
-                danhSach[i]->Move(number);
-                ss >> tmp; number = stoi(tmp);
-                danhSach[i]->Move(number);
+                danhSach[i]->Move(x);
+                ss >> x; 
+                danhSach[i]->Move(x);
                 danhSach[i]->setEnergyLevel(danhSach[i]->getEnergyLevel()-9);
 
             } else {
-                danhSach[i]->Move(number);
+                danhSach[i]->Move(x);
                 danhSach[i]->setEnergyLevel(danhSach[i]->getEnergyLevel()-6);
             }
         }
