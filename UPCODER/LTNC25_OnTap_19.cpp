@@ -8,7 +8,7 @@ int main() {
     stack<int> st;
 
     if (n == 0) {
-        cout << 0 << endl;
+        cout << 0;
         return 0;
     }
 
@@ -22,6 +22,5 @@ int main() {
         st.pop();
     }
 
-    cout << endl;
     return 0;
 }
