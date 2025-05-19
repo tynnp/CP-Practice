@@ -6,14 +6,14 @@ int main() {
     getline(cin, a);
     getline(cin, b);
     
-    size_t pos = a.find(b);
-    while (pos != string::npos) {
+    int pos = a.find(b);
+    while (pos != -1) {
         a.erase(pos, b.size());
         pos = a.find(b, 0);
     }
     
     pos = a.find("  ");
-    if (pos != string::npos)
+    if (pos != -1)
         a.erase(pos, 1);
     
     cout << a;
