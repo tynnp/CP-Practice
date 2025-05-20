@@ -1,35 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int sum, sumMax;
 int n, a[100][100];
-vector<int> path, pathRes;
+int sum, curSum;
+vector<int> path, curPath;
 
-int dx[] = {1, 1};
-int dy[] = {0, 1};
+int di[] = {1, 1};
+int dj[] = {0, 1};
 
 void Try(int i, int j) {
-    sum += a[i][j];
-    path.push_back(a[i][j]);
+    curSum += a[i][j];
+    curPath.push_back(a[i][j]);
     
-    if (i == n - 1) {
-        if (sum > sumMax) {
-            sumMax = sum;
-            pathRes = path;
+    if (i == n) {
+        if (curSum > sum) {
+            sum = curSum;
+            path = curPath;
         }
-        
         return;
     }
     
     for (int k = 0; k < 2; k++) {
-        int x = i + dx[k];
-        int y = j + dy[k];
+        int x = i + di[k];
+        int y = j + dj[k];
         
         if (y <= x) {
             Try(x, y);
-            
-            sum -= a[x][y];
-            path.pop_back();
+            curSum -= a[x][y];
+            curPath.pop_back();
         }
     }
 }
@@ -37,16 +35,15 @@ void Try(int i, int j) {
 int main() {
     cin >> n;
     
-    for (int i = 0; i < n; i++) 
-        for (int j = 0; j <= i; j++)
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= i; j++)
             cin >> a[i][j];
- 
-    Try(0, 0);
+
+    Try(1, 1);
     
-    for (int i = 0; i < pathRes.size(); i++)
-        cout << pathRes[i] << ' ';
-    cout << endl;
+    for (int i = 0; i < path.size(); i++)
+        cout << path[i] << ' ';
+    cout << endl << sum;
     
-    cout << sumMax;
     return 0;
 }
