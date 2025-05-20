@@ -5,8 +5,8 @@ int n, a[100][100];
 int sum, curSum;
 vector<int> path, curPath;
 
-int di[] = {1, 1};
-int dj[] = {0, 1};
+int dx[] = {1, 1};
+int dy[] = {0, 1};
 
 void Try(int i, int j) {
     curSum += a[i][j];
@@ -21,14 +21,12 @@ void Try(int i, int j) {
     }
     
     for (int k = 0; k < 2; k++) {
-        int x = i + di[k];
-        int y = j + dj[k];
+        int x = i + dx[k];
+        int y = j + dy[k];
         
-        if (y <= x) {
-            Try(x, y);
-            curSum -= a[x][y];
-            curPath.pop_back();
-        }
+        Try(x, y);
+        curSum -= a[x][y];
+        curPath.pop_back();
     }
 }
 
