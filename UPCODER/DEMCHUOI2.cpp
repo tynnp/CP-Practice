@@ -17,6 +17,6 @@ int main() {
         ans += 1;
     }
     
-    cout << ans << endl;
+    cout << ans;
     return 0;
 }
