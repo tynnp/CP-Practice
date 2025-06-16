@@ -1,18 +1,23 @@
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int n, m, res = 0;
-    cin >> n >> m;
+int n, m, x, ans;
+vector<int> v;
 
-    int a[n];
-    for (int &x : a) cin >> x;
+int main() {
+    cin.tie(0) -> sync_with_stdio(0);
+    cin >> n >> m;
     
-    sort(a, a + n);
-    for (int i = 0; i < m; i++)
-        if (a[i] < 0) res += -a[i];
+    while (n--) {
+        cin >> x;
+        if (x < 0)
+            v.push_back(x);
+    }
     
-    cout << res;
+    sort(v.begin(), v.end());
+    for (int i = 0; i < min(m, (int) v.size()); i++)
+        ans -= v[i];
+    
+    cout << ans;
     return 0;
 }
