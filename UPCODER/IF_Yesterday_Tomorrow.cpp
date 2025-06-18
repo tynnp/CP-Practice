@@ -83,7 +83,7 @@ int main() {
     Date d;
     cin >> d;
 
-    if (d.val()) {
+    if (d.valid()) {
         cout << d.prev() << endl;
         cout << d.next();
     } else 
