@@ -9,8 +9,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int MAXN = 1e6 + 5;
-int64_t n, s, k, a[MAXN];
+int64_t n, s, k;
 vector<int> v1, v2;
 
 int main() {
