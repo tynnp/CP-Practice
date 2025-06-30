@@ -2,7 +2,7 @@
  * Yêu cầu: Cho số n, hoán vị dãy 1 .. n sao cho không có số nào liền kề chênh nhau 1 đơn vị.
  * Giải: 
  *  Trường hợp 1 < n < 4 không có hoán vị nào phù hợp.
- *  In số chẳn trước, số lẻ sau. Không làm ngược lại, vì trường hợp n = 4 => 1 3 2 4, sẽ bị sai.
+ *  In số chẳn trước, số lẻ sau. Không làm ngược lại, vì trường hợp n = 4 => 1 3 2 4, sẽ bị sai. 
 ***********************************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
