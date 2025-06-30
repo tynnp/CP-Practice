@@ -1,21 +1,24 @@
-#include <iostream>
+/*********************************************************************************************************** 
+ * Yêu cầu: 
+ *  Từ mảng n phần tử ban đầu, tạo thành mảng không giảm, tức a[i] <= a[i+1].
+ *  Mỗi thao tác chỉ được tăng giá trị của phần tử bất kỳ lên 1 đơn vị. Tìm số thao tác tối thiểu.
+ * Giải: Duyệt mảng, nếu a[i-1] > a[i] tính ans += a[i-1] - a[i]. Cập nhật a[i] = max(a[i-1], a[i]).
+***********************************************************************************************************/
+#include <bits/stdc++.h>
 using namespace std;
 
-#define fastIO ios_base::sync_with_stdio(0), cin.tie(0)
-const int MAXN = 2e5 + 6;
+const int MAXN = 2e5 + 5;
+int64_t n, ans, a[MAXN];
 
 int main() {
-    fastIO;
-    int n, a[MAXN];
+    cin.tie(0) -> sync_with_stdio(0);
     cin >> n;
 
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i < n; i++) 
         cin >> a[i];
 
-    long long ans = 0;
-    for (int i = 2; i <= n; i++) {
-        if (a[i-1] > a[i]) 
-            ans += a[i-1] - a[i];
+    for (int i = 1; i < n; i++) {
+        ans += max(0L, a[i-1] - a[i]);
         a[i] = max(a[i-1], a[i]);
     }
 
