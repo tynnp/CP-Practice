@@ -1,28 +1,9 @@
-#include <iostream>
-#include <set>
-#include <algorithm>
+/*********************************************************************************************************** 
+ * Yêu cầu: Đếm số giá trị riêng biệt.
+ * Giải: Dùng set, hoặc đánh dấu mảng,...
+***********************************************************************************************************/
+#include <bits/stdc++.h>
 using namespace std;
-
-// const int MAXN = 2e5 + 5;
-// int n, a[MAXN];
-
-// int main() {
-//     cin.tie(0) -> sync_with_stdio(0);
-//     cin >> n;
-
-//     for (int i = 0; i < n; i++)
-//         cin >> a[i];
-
-//     sort(a, a + n);
-
-//     int ans = 1;
-//     for (int i = 1; i < n; i++)
-//         if (a[i-1] != a[i])
-//             ans++;
-
-//     cout << ans;
-//     return 0;
-// }
 
 int n, x;
 set<int> s;
@@ -35,7 +16,7 @@ int main() {
         cin >> x;
         s.insert(x);
     }
-    
+
     cout << s.size();
     return 0;
 }
