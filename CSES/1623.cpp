@@ -1,29 +1,33 @@
-#include <iostream>
-#include <cmath>
+/*********************************************************************************************************** 
+ * Yêu cầu: Chia táo thành 2 nhóm, sao cho khối lượng chênh lệch nhỏ nhất.
+ * Giải: 
+ *  Vét cạn các trường hợp, sum(idx, sumA, sumB) là vị trí hiện tại, và khối lượng 2 nhóm hiện tại.
+ *  Khi đã chia xong, trả về chênh lệch giữa sumA và sumB. 
+ *  Ngược lại gọi x là thêm vào tổng A, y là thêm vào tổng B. Lấy min(x, y).
+***********************************************************************************************************/
+#include <bits/stdc++.h>
 using namespace std;
 
-const int MAXN = 25;
-long long n, ans, p[MAXN];
+#define int int64_t 
+const int MAXN = 20;
+int n, a[MAXN];
 
-long long Try(int idx, long long sumA, long long sumB) {
-    if (idx > n) 
+int solve(int idx, int sumA, int sumB) {
+    if (idx == n) 
         return abs(sumA - sumB);
-    
-    long long x = Try(idx + 1, sumA, sumB + p[idx]);
-    long long y = Try(idx + 1, sumA + p[idx], sumB);
-
+        
+    int x = solve(idx + 1, sumA + a[idx], sumB);
+    int y = solve(idx + 1, sumA, sumB + a[idx]);
     return min(x, y);
 }
 
-int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-
+int32_t main() {
+    cin.tie(0) -> sync_with_stdio(0);
     cin >> n;
 
-    for (int i = 1; i <= n; i++)    
-        cin >> p[i];
-
-    cout << Try(1, 0LL, 0LL);
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+    
+    cout << solve(0, 0, 0);
     return 0;
 }
