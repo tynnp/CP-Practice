@@ -1,21 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    string s;
+string s;
+multiset<char> ans;
+
+main() {
+    cin.tie(0) -> sync_with_stdio(0);
     cin >> s;
-
-    int ans = INT_MIN;
-    s.erase(remove_if(s.begin(), s.end(), ::islower), s.end());
-    vector<int> dp(s.size() + 1, 1);
-
-    for (int i = 0; i < s.size(); i++) {
-        for (int j = 0; j < i; j++) 
-            if (s[j] < s[i])
-                dp[i] = max(dp[i], dp[j] + 1);
-        ans = max(ans, dp[i]);
+    
+    for (char c : s) {
+        if (islower(c))
+            continue;
+        
+        auto it = ans.lower_bound(c);
+        
+        if (it != ans.end()) 
+            ans.erase(it);
+        ans.insert(c);
     }
     
-    cout << (s == "" ? 0 : ans);
+    cout << ans.size();
     return 0;
 }
