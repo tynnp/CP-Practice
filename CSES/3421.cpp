@@ -1,5 +1,5 @@
 /*********************************************************************************************************** 
- * Yêu cầu: 
+ * Yêu cầu: đếm số lượng dãy con không rỗng mà tất cả các phần tử trong dãy con đều khác nhau.
  * Giải: 
  *  Mỗi dãy con hợp lệ tương ứng trực tiếp với cách chọn tối đa một vị trí trong mỗi nhóm các phần tử bằng nhau. 
  *  nếu giá trị v xuất hiện cv lần trong mảng, thì ta có hai lựa chọn cho mỗi dãy con.
