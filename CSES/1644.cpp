@@ -9,7 +9,7 @@
 using namespace std;
 
 #define int int64_t
-const int MAXN = 2e5 + 5;
+const int MAXN = 2e5 + 5; 
 
 int n, a, b, x;
 int ans, pfx[MAXN];
