@@ -36,30 +36,13 @@ int64_t mod_string(string n, int64_t m) {
     return res;
 }
 
-string div_by_2(string n) {
-    string res;
-    int d, car = 0;
-    
-    for (char c : n) {
-        d = car * 10 + (c - '0');
-        res.push_back((d / 2) + '0');
-        car = d % 2;
-    }
-    
-    while (res.size() > 1 && res[0] == '0')
-        res.erase(res.begin());
-    return res;
-}
-
-int64_t binary_pow_big(string a_str, string b, int64_t c) {
+int64_t binary_pow(string a_str, string b, int64_t c) {
     int64_t res = 1;
     int64_t a = mod_string(a_str, c);
     
-    while (b != "0") {
-        if ((b.back() - '0') & 1)
-            res = binary_mul(res, a, c);
-        a = binary_mul(a, a, c);
-        b = div_by_2(b);
+    for (char ch : b) {
+        res = binary_pow(res, 10, c);
+        res = binary_mul(res, binary_pow(a, ch - '0', c), c);
     }
     
     return res;
@@ -70,6 +53,6 @@ int main() {
     int64_t c;
     string a, b;
     cin >> a >> b >> c;
-    cout << binary_pow_big(a, b, c);
+    cout << binary_pow(a, b, c);
     return 0;
 }
