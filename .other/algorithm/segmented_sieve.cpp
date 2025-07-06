@@ -1,5 +1,5 @@
 /*********************************************************************************************************** 
- * Yêu cầu: Đếm số lượng số nguyên tố trong đoạn [L, R] với L, R <= 10^12
+ * Yêu cầu: Đếm số lượng số nguyên tố trong đoạn [L, R] với L, R <= 10^12; R - L <= 10^6.
  * Giải: 
  *  Sàng nguyên tố đến sqrt(R) bằng Sàng Eratosthenes -> lấy mảng các số nguyên tố p.
  *  Khởi tạo mảng đánh dấu độ dài r - l + 1 toàn true.
