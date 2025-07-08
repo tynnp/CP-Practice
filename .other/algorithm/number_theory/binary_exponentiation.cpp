@@ -9,8 +9,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int64_t binary_mul(int64_t a, int64_t b, int64_t c) {
-    int64_t res = 0;
+#define int int
+
+int binary_mul(int a, int b, int c) {
+    int res = 0;
     a %= c;
     
     while (b) {
@@ -23,8 +25,8 @@ int64_t binary_mul(int64_t a, int64_t b, int64_t c) {
     return res;
 }
 
-int64_t binary_pow(int64_t a, int64_t b, int64_t c) {
-    int64_t res = 1;
+int binary_pow(int a, int b, int c) {
+    int res = 1;
     a %= c;
     
     while (b) {
@@ -37,16 +39,16 @@ int64_t binary_pow(int64_t a, int64_t b, int64_t c) {
     return res;
 }
 
-int64_t mod_string(string n, int64_t m) {
-    int64_t res = 0;
+int mod_string(string n, int m) {
+    int res = 0;
     for (char c : n) 
         res = (res * 10 + (c - '0')) % m;
     return res;
 }
 
-int64_t binary_pow(string a_str, string b, int64_t c) {
-    int64_t res = 1;
-    int64_t a = mod_string(a_str, c);
+int binary_pow(string a_str, string b, int c) {
+    int res = 1;
+    int a = mod_string(a_str, c);
     
     for (char ch : b) {
         res = binary_pow(res, 10, c);
@@ -56,9 +58,9 @@ int64_t binary_pow(string a_str, string b, int64_t c) {
     return res;
 }
 
-int main() {
+int32_t main() {
     cin.tie(0) -> sync_with_stdio(0);
-    int64_t c;
+    int c;
     string a, b;
     cin >> a >> b >> c;
     cout << binary_pow(a, b, c);
