@@ -1,28 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+string s;
+int n, cnt, ans;
+unordered_map<int, int> m;
+
 int main() {
-    int len, ans = INT_MAX;
-    string s;
-    map<char, int> m;
-    
-    cin >> len >> s;
-    for (auto c : s) m[c]++;
-    
-    int i = 0, j = 0, poke = m.size();
-    
+    cin.tie(0) -> sync_with_stdio(0);
+    cin >> n >> s;
+
+    for (char c : s) m[c]++;
+    cnt = m.size();
+
     m.clear();
-    while (i < len) {
-        while (j < len && m.size() < poke) 
-            m[s[j]]++, j++;
+    ans = INT_MAX;
+    int l = 0, r = 0, k = 0;
+    
+    while (l < n && r < n) {
+        if (++m[s[r]] == 1) k++;
         
-        if (m.size() == poke) 
-            ans = min(ans, j - i);
+        while (k >= cnt) {
+            if (k == cnt) ans = min(ans, r - l + 1);
+            if (m[s[l]] == 1) k--;
+            m[s[l]]--;
+            l++;
+        }
         
-        if (m[s[i]] == 1) m.erase(s[i]);
-        else m[s[i]]--;
-        
-        i++;
+        r++;
     }
     
     cout << ans;
