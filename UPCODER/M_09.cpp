@@ -7,7 +7,6 @@ const int MAXN = 2e5 + 5;
 const int MOD = 1e9 + 7;
 int m, q, sum[MAXN], psum[MAXN];
 
-
 void solve() {
     int x, y, a, b, c, d;
     cin >> x >> y >> a >> b >> c >> d;
