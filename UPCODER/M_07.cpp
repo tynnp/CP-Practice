@@ -3,7 +3,7 @@ using namespace std;
 
 #define int int64_t 
 const int MOD = 1e9 + 7;
-string a, b, c;
+string astr, bstr, cstr;
 
 int pow(int a, int b, int c) {
     a %= c;
@@ -30,7 +30,7 @@ int modstr(string n, int m) {
     return res;
 } 
 
-int pow(string astr, string b, int c) {
+int powstr(string astr, string b, int c) {
     int a = modstr(astr, c);
     int res = 1;
     
@@ -44,7 +44,11 @@ int pow(string astr, string b, int c) {
 
 int32_t main() {
     cin.tie(0) -> sync_with_stdio(0);
-    cin >> a >> b >> c;
-    cout << pow(modstr(a, MOD), pow(b, c, MOD - 1), MOD);
+    cin >> astr >> bstr >> cstr;
+    
+    int a = modstr(astr, MOD);
+    int b = powstr(bstr, cstr, MOD - 1);
+    
+    cout << pow(a, b, MOD);
     return 0;
 }
