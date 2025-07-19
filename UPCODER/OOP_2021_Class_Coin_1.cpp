@@ -8,6 +8,7 @@ private:
     float price;
     float low;
     float high;
+    
 public:
     Coin() {
         name = "NoName";
