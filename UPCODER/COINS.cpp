@@ -2,9 +2,9 @@
 using namespace std;
 
 #define int int64_t 
-const int MAXN = 1e5 + 5;
+const int MAXN = 2e5 + 5;
 
-int n, x, a[MAXN];
+int n, x, a[105];
 int dp[MAXN];
 
 int32_t main() {
@@ -23,6 +23,6 @@ int32_t main() {
             if (i >= a[j] && dp[i - a[j]] != LLONG_MAX)
                 dp[i] = min(dp[i], dp[i - a[j]] + 1);
     
-    cout << dp[x];
+    cout << (dp[x] == LLONG_MAX ? -1 : dp[x]);
     return 0;
 }
