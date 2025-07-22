@@ -1,3 +1,11 @@
+# 📂 CP-Practice Repository
+Đây là kho lưu trữ các bài giải lập trình thi đấu được mình tổng hợp lại trong quá trình luyện tập trên nhiều nền tảng chấm bài khác nhau. Nếu bạn thấy repository này hữu ích, hãy nhấn nút Star ⭐ ở góc phải phía trên để ủng hộ mình nhé. Điều đó sẽ là nguồn động lực rất lớn để mình tiếp tục cập nhật và chia sẻ nhiều hơn!
+
+Bạn có thể tải toàn bộ source code bằng lệnh sau trong terminal hoặc Git Bash:
+```bash
+git clone https://github.com/tynnp/CP-Practice.git
+```
+
 ## 📑 Thông tin liên quan
 - Số lượng file bài giải: 1606.
 - Ngôn ngữ lập trình sử dụng chính: C/C++, Python, Java.
