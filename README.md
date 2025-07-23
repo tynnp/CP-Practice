@@ -12,7 +12,7 @@ git clone https://github.com/tynnp/CP-Practice.git
 - Phần mềm sử dụng chính: Visual Studio Code.
 
 <p align="center">
-  <img src=".other/images/cat.gif" alt="coding gif" width="80%">
+  <img src=".other/images/cat.gif" alt="coding gif" width="50%">
 </p>
 
 ## 🖥️ Trang chấm bài
