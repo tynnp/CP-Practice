@@ -1,12 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: Đếm số lượng số nguyên tố trong đoạn [L, R] với L, R <= 10^12; R - L <= 10^6.
- * Giải: 
- *  Sàng nguyên tố đến sqrt(R) bằng Sàng Eratosthenes -> lấy mảng các số nguyên tố p.
- *  Khởi tạo mảng đánh dấu độ dài r - l + 1 toàn true.
- *  Dùng các số nguyên tố p để đánh dấu bội số của p trong đoạn [L, R] là false.
- *  Nếu l = 1 thì đặt res[0] = false vì 1 không phải số nguyên tố.
- *  Đếm số lượng true còn lại -> chính là số nguyên tố trong đoạn.
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
 
