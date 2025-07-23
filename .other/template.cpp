@@ -15,7 +15,7 @@ template<typename K, typename V> using ordered_map = tree<K, V, less<K>, rb_tree
 
 void setIO(string name = "") { 
     cin.tie(0) -> sync_with_stdio(0);
-    if (sz(name)) {
+    if (name.size()) {
         freopen((name + ".in").c_str(), "r", stdin); 
         freopen((name + ".out").c_str(), "w", stdout);
     }
