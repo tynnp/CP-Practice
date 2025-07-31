@@ -1,25 +1,28 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-int main() {
-    string n;    
-    int sum, len, a[10][10];
-
-    for (int j = 0; j <= 9; j++)
-        a[1][j] = j;
-
-    for (int i = 2; i <= 9; i++) 
-        for (int j = 0; j <= 9; j++)
-            a[i][j] = a[i-1][j] * j;
-
-
-    while (cin >> n) {
-        sum = 0;
-        len = n.length();
-        for (int i = 0; i < len; i++)
-            sum += a[len][n[i]-48];
-        cout << (sum == stoi(n) ? "YES\n" : "NO\n");
+bool Arm(int n) {
+    int k = log10(n) + 1;
+    int sum = 0, m = n;
+    
+    while (n != 0) {
+        sum += pow(n % 10, k);
+        n /= 10;
     }
+    
+    return sum == m;
+}
 
+int main() {
+    int n;
+    
+    while (cin >> n) {
+        if (Arm(n)) 
+            cout << "YES\n";
+        else 
+            cout << "NO\n";
+    }
+    
     return 0;
 }
