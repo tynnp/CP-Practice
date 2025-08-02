@@ -1,13 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: 
- *  Dòng đầu tiên in số lượng đoạn khác mà nó chứa được.
- *  Dòng thứ hai in số đoạn chứa nó.
- *  quy ước [a, b] chứa [c, d] nếu a <= c và d <= b.
- * Giải: 
- *  Sắp xếp l tăng dần, nếu l bằng nhau thì r giảm dần. Tùy theo thứ tự duyệt để đảm bảo l.
- *  Đối với pos1 (dòng 1): Với mỗi đoạn a[i] nếu tồn tại r' <= r thì a[i] chứa 1 đoạn khác, tính số lượng bằng indexed_set.
- *  Đối với pos2 (dòng 2): Với mỗi đoạn a[i] nếu tồn tại r' >= r thì a[i] bị chứa bởi 1 đoạn khác, tính số lượng indexed_set.
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 
