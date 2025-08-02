@@ -1,15 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: 
- *  Có n dự án, mỗi dự án có ngày bắt đầu a, kết thúc b, phần thưởng p. 
- *  Cần chọn tập con các dự án không giao nhau về ngày, sao cho tổng phần thưởng là lớn nhất.
- * Giải: 
- *  Sắp xếp các dự án theo ngày kết thúc b.
- *  Dùng dp[i] để lưu tổng phần thưởng lớn nhất nếu chỉ xét i dự án đầu tiên.
- *  Với mỗi dự án i, ta có:
- *      Không chọn -> dp[i] = dp[i-1].
- *      Chọn -> cộng pi với dp[r], nơi r là dự án cuối cùng có b[r] < a[i] => dp[i] = pi + dp[r].
- *  Chọn giá trị lớn nhất: dp[i] = max(dp[i - 1], m[i].p + dp[r]);
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 
