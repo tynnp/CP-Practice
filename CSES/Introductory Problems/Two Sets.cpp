@@ -1,11 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: Chia các số từ 1 đến n thành 2 tổng bằng nhau.
- * Giải: 
- *  Để chia được thành 2 tổng bằng nhau, thì s = tổng 1 đến n phải là số chẵn.
- *  Thực hiện xây dựng 2 tổng s1 và s2 lần lượt. Gọi k = s/2 là mục tiêu của s1 và s2.
- *  Duyệt từ n về 1. Ở mỗi x, nếu s1 < s2 và s1 + x <= k thì cộng x vào s1, ngược lại cộng vào s2.
- *  Nếu s1 == s2 == k, có nghĩa là chia thành 2 tổng thành công.
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
 
