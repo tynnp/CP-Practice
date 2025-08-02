@@ -1,14 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: Có một lưới n x n chứa kí tự 'A' .. 'Z', xuất phát từ (0, 0) đến (n-1, n-1).
- *  Mỗi bước được đi sang phải hoặc xuống dưới.
- *  Tìm chuỗi ký tự tối tiểu theo thứ tự từ điển có thể thu được trên một đường đi như vậy.
- * Giải: 
- *  Mỗi bước, duyệt qua tất cả các vị trí đang có (curPos) và xét 2 hướng đi: Xuống (x+1, y), Phải (x, y+1).
- *  Trong các ô có thể đi tới, tìm ký tự nhỏ nhất minC.
- *  Chỉ giữ lại các ô có ký tự đúng bằng minC để mở rộng ở bước tiếp theo (nextPos).
- *  Cập nhật tập vị trí hiện tại curPos = nextPos, và thêm minC vào chuỗi ans.
- *  Lặp lại quá trình trên tổng cộng 2n - 2 lần (tổng số bước đi từ (0,0) đến (n-1,n-1)).
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 
