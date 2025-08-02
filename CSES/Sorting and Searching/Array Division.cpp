@@ -1,7 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: Chia mảng thành k đoạn con liên tiếp sao cho giá trị lớn nhất của tổng các đoạn là nhỏ nhất có thể.
- * Giải: Dùng tìm kiếm nhị phân để xác định tổng nhỏ nhất có thể chia.
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
 
