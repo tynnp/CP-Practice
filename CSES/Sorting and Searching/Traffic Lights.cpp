@@ -1,7 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: Có con đường được đánh số từ 0 .. x. Lần lượt có đèn giao thông được thêm vào, tìm đoạn dài nhất không đèn.
- * Giải: Duy trì 1 danh sách chứa đầu cuối của các đoạn, 1 danh sách chứa khoảng cách của các đoạn đó.
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
 
