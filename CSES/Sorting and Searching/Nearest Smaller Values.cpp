@@ -1,7 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: Với mỗi vị trí trong mảng, tìm ví trị gần nhất bên trái mà giá trị nhỏ hơn giá trị tại vị trí đó.
- * Giải: Duy trì 1 stack chứa các chỉ số có giá trị nhỏ hơn giá trị hiện tại, top() chính là giá trị gần nhất.
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
 
