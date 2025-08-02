@@ -1,10 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: Tìm dãy tăng dài nhất trong chuỗi ban đầu.
- * Giải: 
- *  Sử dụng lower_bound để tìm giá trị lớn hơn hoặc bằng x.
- *  Nếu tìm thấy => thay thế bằng x để đảm bảo có thể chèn thêm các số sau, đảm bảo dãy tăng dài nhất.
- *  Nếu không tìm thấy => chèn x vào dãy kết quả.
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 
