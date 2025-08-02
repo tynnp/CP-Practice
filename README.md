@@ -8,7 +8,7 @@ git clone https://github.com/tynnp/CP-Practice.git
 ```
 
 ## 📑 Thông tin liên quan
-- Số lượng file bài giải: 1664.
+- Số lượng file bài giải: 1665.
 - Ngôn ngữ lập trình sử dụng chính: C/C++, Python, Java.
 - Phần mềm sử dụng chính: Visual Studio Code.
 
