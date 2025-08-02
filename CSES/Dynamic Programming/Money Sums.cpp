@@ -1,11 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: Cho dãy n giá trị, có các giá trị nào có thể tạo từ dãy đó? Mỗi giá trị trong dãy được sử dụng 1 lần.
- * Giải: 
- *  Gọi dp[x] = true nếu có thể tạo thành x.
- *  Ta có dp[0] = true.
- *  Lần lượt duyệt qua các giá trị trong dãy, mỗi giá trị duyệt tổng MAX về 0.
- *  dp[j] = dp[j] | dp[j - a[i]], Giá trị j có thể tạo thành nếu có thể tạo thành giá trị j - a[i].
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 
