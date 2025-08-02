@@ -1,7 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: Tìm thời gian ngắn nhất để sản xuất t sản phẩm, biết các máy a[i] sản xuất đồng thời với thời gian khác nhau.
- * Giải: Dùng tìm kiếm nhị phân để tìm thời gian ngắn nhất thu được đúng sản phẩm t.
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
 
