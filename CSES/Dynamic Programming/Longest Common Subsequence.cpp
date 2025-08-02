@@ -1,12 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: Cho hai mảng số nguyên a, b. Tìm dãy con chung dài nhất từ hai mảng đó.
- * Giải: 
- *  Gọi dp[i][j] là độ dài dài nhất của dãy con chung giữa a[1..i] và b[1..j]
- *  Duyệt 2 mảng, nếu a[i] == b[j] => dp[i][j] = dp[i-1][j-1] + 1;
- *  Ngược lại => dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
- *  Truy vết từ dp[n][m] về dp[1][1] Nếu a[i] == b[j] => phần tử thuộc dãy con chung dài nhất.
- *  Nếu dp[i-1][j] > dp[i][j-1] => giảm i, ngược lại giảm j.
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 
