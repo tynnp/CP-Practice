@@ -1,13 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: 
- *  Dòng đầu tiên in 1 nếu đoạn đó chứa ít nhất 1 đoạn khác, ngược lại in 0.
- *  Dòng thứ hai in 1 nếu đoạn đó bị chứa trong một đoạn khác, ngược lại in 0.
- *  quy ước [a, b] chứa [c, d] nếu a <= c và d <= b
- * Giải: 
- *  Sắp xếp l tăng dần, nếu l bằng nhau thì r giảm dần. Tùy theo thứ tự duyệt để đảm bảo l.
- *  Đối với pos1 (dòng 1): Với mỗi đoạn a[i] nếu tồn tại r' <= r thì a[i] chứa 1 đoạn khác.
- *  Đối với pos2 (dòng 2): Với mỗi đoạn a[i] nếu tồn tại r' >= r thì a[i] bị chứa bởi 1 đoạn khác.
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
 
