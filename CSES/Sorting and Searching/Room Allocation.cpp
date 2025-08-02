@@ -1,10 +1,3 @@
-/*********************************************************************************************************** 
- * Yêu cầu: Phân bố phòng sao cho: mỗi khách 1 phòng riêng, Hai khách có thể dùng chung nếu khách trước trả phòng trước ngày đến của khách sau.
- * Giải: 
- *  Sắp xếp các khách theo ngày đến tăng dần.
- *  Với mỗi khách, nếu có phòng mà ngày trả phòng <= ngày đến hiện tại, thì dùng lại phòng đó.
- *  Nếu không, tạo một phòng mới.
-***********************************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
 
