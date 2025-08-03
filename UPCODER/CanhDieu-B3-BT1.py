@@ -1,0 +1,1 @@
+print("Học lập trình với Python để ra lệnh cho máy tính")
