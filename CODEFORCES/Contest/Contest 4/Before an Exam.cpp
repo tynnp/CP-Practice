@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int d, sumTime, min, max, sum;
+int minTime[d], maxTime[d];
+vector<int> res;
+
 int main() {
-    int d, sumTime, min = 0, max = 0, sum = 0;
-    int minTime[d], maxTime[d];
-    vector<int> res;
     cin >> d >> sumTime;
 
     for (int i = 0; i < d; i++) {
