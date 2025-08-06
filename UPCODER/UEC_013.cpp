@@ -10,9 +10,10 @@ int main() {
     int mm = (n % 3600) / 60;
     int ss = n % 60;
 
-    cout << setfill('0') << setw(2) << hh << ":";
-    cout << setfill('0') << setw(2) << mm << ":";
-    cout << setfill('0') << setw(2) << ss;
+    cout << setfill('0');
+    cout << setw(2) << hh << ":";
+    cout << setw(2) << mm << ":";
+    cout << setw(2) << ss;
 
     return 0;
 }
