@@ -842,3 +842,9 @@ MAMONHOC
 repeatedDigitRoot
 XEPHANG2
 RoundDance
+QUEEN_FIGHT
+Odd_Even
+MAXMINA
+AOTHETHAO
+KhayTrung
+LichSuSuDungDienThoai
