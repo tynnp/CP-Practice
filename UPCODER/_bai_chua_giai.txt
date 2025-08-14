@@ -871,3 +871,5 @@ olp_graph_spath_bonus
 olp_dpbasic_1
 olp_dpbasic_5
 olp_dpbasic_6
+CA_CUOC2
+Chia2so
