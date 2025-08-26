@@ -27,9 +27,9 @@ void pre() {
     for (int i = 1; i <= n; i++) 
         fact[i] = (fact[i - 1] * i) % MOD;
     
-    ifact[n] = pow(fact[n], MOD - 2, MOD);
+    ifact[MAXN - 1] = pow(fact[MAXN - 1], MOD - 2, MOD);
     
-    for (int i = n - 1; i >= 1; i--)
+    for (int i = MAXN - 2; i >= 1; i--)
         ifact[i] = (ifact[i + 1] * (i + 1)) % MOD;
 }
 
