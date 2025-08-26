@@ -4,30 +4,42 @@ using namespace std;
 #define int int64_t
 int n;
 
-int Mul(int a, int b, int c) {
-    if (b == 0) return 0;
-    int res = Mul((a << 1) % c, b >> 1, c);
-    if (b & 1)
-        res = (res + a) % c;
+int mul(int a, int b, int c) {
+    a %= c;
+    int res = 0;
+
+    while (b) {
+        if (b & 1) 
+            res = (res + a) % c;
+        a = (a << 1) % c;
+        b >>= 1;
+    }
+
     return res;
 }
 
-int Pow(int a, int b, int c) {
-    if (b == 0) return 1;
-    int res = Pow(Mul(a % c, a % c, c), b >> 1, c);
-    if (b & 1)  
-        res = Mul(a % c, res, c);
+int pow(int a, int b, int c) {
+    a %= c;
+    int res = 1;
+    
+    while (b) {
+        if (b & 1)
+            res = mul(res, a, c);
+        a = mul(a, a, c);
+        b >>= 1;
+    }
+
     return res;
-}
+} 
 
 bool test(int x, int n, int k, int m) {
-    int mod = Pow(x, m, n);
+    int mod = pow(x, m, n);
     
     if (mod == 1 || mod == n - 1)
         return true;
     
     for (int l = 1; l < k; l++) {
-        mod = Mul(mod, mod, n);
+        mod = mul(mod, mod, n);
         if (mod == n - 1)
             return true;
     }
