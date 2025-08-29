@@ -1,19 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, k, cnt(0);
-int giaTri[100];
+int n, k, cnt;
+int a[100];
 
 void print() {
     cnt += 1;
     for (int i = 1; i <= k; i++)
-        cout << giaTri[i] << " ";
+        cout << a[i] << " ";
     cout << endl;
 }
 
 void Try(int x) {
-    for (int i = giaTri[x - 1] + 1; i <= n - k + x; i++) {    
-        giaTri[x] = i;
+    for (int i = a[x - 1] + 1; i <= n - k + x; i++) {    
+        a[x] = i;
         if (x == k) print();
         else Try(x + 1);
     }
