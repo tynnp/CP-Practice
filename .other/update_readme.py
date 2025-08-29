@@ -27,7 +27,7 @@ def update_readme(file_count):
     for i, line in enumerate(content):
         if line.startswith('- Số lượng file bài giải hiện tại: '):
             content[i] = f'- Số lượng file bài giải hiện tại: {file_count}.\n'
-        break
+            break
 
     with open(readme_path, 'w') as file:
         file.writelines(content)
