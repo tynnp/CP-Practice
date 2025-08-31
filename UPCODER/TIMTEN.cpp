@@ -19,7 +19,7 @@ ostream& operator << (ostream& out, nhanVien p){
 }
 
 int main() {
-    int n, k;
+    long long n, k;
     cin >> n;
     cin.ignore();
     
