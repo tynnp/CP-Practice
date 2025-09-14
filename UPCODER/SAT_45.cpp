@@ -1,26 +1,42 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, a[1000], x, y, sum;
+int x;
+vector<int> v;
+vector<pair<int, int>> ans;
 
 int main() {
-    while (cin >> a[n]) n++;
-    
-    x = -1, y = -1;
-    for (int i = 0; i < n; i++) {
-        for (int j = i + 1; j < n; j++) {
-            if (__gcd(a[i], a[j]) == 1 && a[i] + a[j] > sum) {
-                sum = a[i] + a[j];
-                x = i, y = j;
+    cin.tie(0) -> sync_with_stdio(0);
+    while (cin >> x) v.push_back(x);
+       
+    for (int i = 0; i < v.size(); i++) {
+        for (int j = i + 1; j < v.size(); j++) {
+            if (__gcd(v[i], v[j]) == 1) {
+                ans.push_back({min(v[i], v[j]), max(v[i], v[j])});
             }
         }
     }
     
-    if (x != -1) {
-        cout << min(a[x], a[y]) << ' ' << max(a[x], a[y]);
-    } else {
-        cout << -1;
-    }
-    
+    sort(ans.begin(), ans.end(), [] (auto a, auto b) {
+        if (a.first + a.second >= b.first + b.second) 
+            return true;
+            
+        if (a.first + a.second == b.first + b.second) {
+            if (a.first <= b.first)
+                return true;
+                
+            if (a.first == b.first && a.second <= b.second)
+                return true;
+        }
+        
+        return false;
+    });
+   
+    // for (auto p : ans) {
+    //     cout << p.first << ' ' << p.second << endl;
+    // }
+   
+    auto p = ans[0];
+    cout << p.first << ' ' << p.second;
     return 0;
 }
