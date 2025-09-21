@@ -6,19 +6,19 @@ int n, a[100];
 void print() {
     for (int i = 0; i < n; i++)
         cout << a[i];
-    cout << endl;
+    cout << '\n';
 }
 
-void solve(int idx) {
-    if (idx == n) {
+void solve(int pos) {
+    if (pos == n) {
         print();
         return;
     }
     
-    a[idx] = 0;
-    solve(idx + 1);
-    a[idx] = 1;
-    solve(idx + 1);
+    a[pos] = 0;
+    solve(pos + 1);
+    a[pos] = 1;
+    solve(pos + 1);
 }
 
 int main() {
