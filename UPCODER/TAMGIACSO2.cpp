@@ -10,7 +10,7 @@ int dx[] = {1, 1};
 int dy[] = {0, 1};
 
 void Try(int x, int y) {
-    if (x == n-1) {
+    if (x == n - 1) {
         if (ans < sum) {
             ans = sum;
             ketQua.clear();
@@ -51,11 +51,11 @@ int main() {
     duongDi.push_back(a[0][0]);
     Try(0, 0);
     
-    cout << ans << endl;
+    cout << ans << '\n';
     for (auto x : ketQua) {
         for (auto y : x)    
             cout << y << " ";
-        cout << endl;
+        cout << '\n';
     }
     
     return 0;
