@@ -2,20 +2,20 @@
 using namespace std;
 
 int n, a[100][100];
-int sum, curSum;
-vector<int> path, curPath;
+int ans, sum;
+vector<int> ketQua, duongDi;
 
 int dx[] = {1, 1};
 int dy[] = {0, 1};
 
 void Try(int i, int j) {
-    curSum += a[i][j];
-    curPath.push_back(a[i][j]);
+    sum += a[i][j];
+    duongDi.push_back(a[i][j]);
     
     if (i == n) {
-        if (curSum > sum) {
-            sum = curSum;
-            path = curPath;
+        if (sum > ans) {
+            ans = sum;
+            ketQua = duongDi;
         }
         return;
     }
@@ -25,8 +25,8 @@ void Try(int i, int j) {
         int y = j + dy[k];
         
         Try(x, y);
-        curSum -= a[x][y];
-        curPath.pop_back();
+        sum -= a[x][y];
+        duongDi.pop_back();
     }
 }
 
@@ -39,9 +39,9 @@ int main() {
 
     Try(1, 1);
     
-    for (int i = 0; i < path.size(); i++)
-        cout << path[i] << ' ';
-    cout << endl << sum;
+    for (int i = 0; i < ketQua.size(); i++)
+        cout << ketQua[i] << ' ';
+    cout << '\n' << ans;
     
     return 0;
 }
